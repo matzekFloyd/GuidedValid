@@ -1,0 +1,37 @@
+.column {
+  float: left;
+}
+
+.left {
+  margin-left: 10%;
+  width: 17%;
+  padding: 1%;
+  height: 500px;
+}
+
+.right {
+  margin-right: 10%;
+  width: 59%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.App {
+
+}
+
+.App .legend {
+
+}
+
+.App .visualization {
+  background-color: #f3f3f3;
+}
+
+.btn {
+  margin: 0 2.5px 0 2.5px;
+}
