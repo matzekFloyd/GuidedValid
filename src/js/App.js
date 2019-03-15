@@ -1,31 +1,28 @@
 import React, {Component} from 'react';
+import BarChart from './BarChart'
 import '../css/main.css';
+import Legend from "./Legend";
 
 class App extends Component {
+
+    constructor(props, context) {
+        super(props, context);
+        this.state = {changeVis: false}
+    }
+
+    changeVis(){
+        this.setState({changeVis: !this.state.changeVis});
+    }
 
     render() {
         return (
             <div className="App row">
                 <div className="legend column left" id="legend">
-                    <h2>Guided Valid</h2>
-                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
-                        ut labore et
-                        dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-                        rebum. Stet
-                        clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor
-                        sit amet,
-                        consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                        aliquyam erat,
-                        sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
-                        gubergren, no
-                        sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-                    <button className="btn btn-info"> Vis 1</button>
-                    <button className="btn btn-secondary"> Vis 2</button>
-                    <button className="btn btn-secondary"> Vis 3</button>
+                    <Legend/>
+                    <button className="btn btn-info" onClick={() => this.changeVis()}> Change Vis</button>
                 </div>
-
                 <div className="visualization column right">
-                    <p> Placeholder for vega visualization </p>
+                    <BarChart changeVis={this.state.changeVis}/>
                 </div>
             </div>
         );
