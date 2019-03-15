@@ -6,7 +6,11 @@
     "bootstrap": "^4.3.1",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
-    "react-scripts": "2.1.8"
+    "react-scripts": "2.1.8",
+    "react-vega": "^4.0.2",
+    "react-vega-lite": "^2.0.2",
+    "vega-lib": "^4.4.0",
+    "vega-lite": "^3.0.0-rc15"
   },
   "scripts": {
     "start": "react-scripts start",
