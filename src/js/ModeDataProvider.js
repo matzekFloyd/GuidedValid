@@ -1,6 +1,9 @@
 const MODE_1 = {
     mark: "bar",
-    encoding: {x: {field: "a", type: "ordinal"}, y: {field: "b", type: "quantitative"}},
+    spec: {
+        mark: "bar",
+        encoding: {x: {field: "a", type: "ordinal"}, y: {field: "b", type: "quantitative"}},
+    },
     data: {
         values: [
             {a: "A", b: 20}, {a: "B", b: 34}, {a: "C", b: 55},
@@ -13,7 +16,10 @@ const MODE_1 = {
 
 const MODE_2 = {
     mark: "bar",
-    encoding: {x: {field: "a", type: "ordinal"}, y: {field: "b", type: "quantitative"}},
+    spec: {
+        mark: "bar",
+        encoding: {x: {field: "a", type: "ordinal"}, y: {field: "b", type: "quantitative"}},
+    },
     data: {
         values: [
             {a: "A", b: 13}, {a: "B", b: 16}, {a: "C", b: 37},
@@ -26,7 +32,10 @@ const MODE_2 = {
 
 const MODE_3 = {
     mark: "bar",
-    encoding: {x: {field: "a", type: "ordinal"}, y: {field: "b", type: "quantitative"}},
+    spec: {
+        mark: "bar",
+        encoding: {x: {field: "a", type: "ordinal"}, y: {field: "b", type: "quantitative"}},
+    },
     data: {
         values: [
             {a: "A", b: 45}, {a: "B", b: 34}, {a: "C", b: 55},
@@ -39,7 +48,10 @@ const MODE_3 = {
 
 const MODE_4 = {
     mark: "bar",
-    encoding: {x: {field: "a", type: "ordinal"}, y: {field: "b", type: "quantitative"}},
+    spec: {
+        mark: "bar",
+        encoding: {x: {field: "a", type: "ordinal"}, y: {field: "b", type: "quantitative"}},
+    },
     data: {
         values: [
             {a: "A", b: 2}, {a: "B", b: 14}, {a: "C", b: 23},
@@ -52,7 +64,10 @@ const MODE_4 = {
 
 const MODE_5 = {
     mark: "bar",
-    encoding: {x: {field: "a", type: "ordinal"}, y: {field: "b", type: "quantitative"}},
+    spec: {
+        mark: "bar",
+        encoding: {x: {field: "a", type: "ordinal"}, y: {field: "b", type: "quantitative"}},
+    },
     data: {
         values: [
             {a: "A", b: 20}, {a: "B", b: 14}, {a: "C", b: 55},
@@ -65,7 +80,10 @@ const MODE_5 = {
 
 const MODE_6 = {
     mark: "bar",
-    encoding: {x: {field: "a", type: "ordinal"}, y: {field: "b", type: "quantitative"}},
+    spec: {
+        mark: "bar",
+        encoding: {x: {field: "a", type: "ordinal"}, y: {field: "b", type: "quantitative"}},
+    },
     data: {
         values: [
             {a: "A", b: 68}, {a: "B", b: 37}, {a: "C", b: 45},
