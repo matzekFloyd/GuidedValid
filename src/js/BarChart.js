@@ -16,26 +16,45 @@ const changedValues = [
 
 export default class BarChart extends Component {
 
+    getValues(identifier) {
+        switch (identifier) {
+            case 1:
+                return defaultValues;
+            case 2:
+                return changedValues;
+            default:
+                return defaultValues;
+        }
+    }
+
+
     constructor(props, context) {
         super(props, context);
-        this.spec = {
-            description: "A simple bar chart with embedded data.",
+        this.state = {
             mark: "bar",
+            encoding: {x: {field: "a", type: "ordinal"}, y: {field: "b", type: "quantitative"}},
+            data: {values: defaultValues},
+            changeVis: props.changeVis
+        };
+
+        this.spec = {
+            mark: this.state.mark,
             encoding: {
-                x: {field: "a", type: "ordinal"},
-                y: {field: "b", type: "quantitative"}
+                x: this.state.encoding.x,
+                y: this.state.encoding.y
             }
         };
-        this.state = {data: {values: defaultValues}, changeVis: props.changeVis}
+
+    }
+
+    componentWillMount() {
+        this.setState({mark: "bar"}, () => {
+        });
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
-        if (!equal(this.props.changeVis, prevProps.changeVis)) {
-            if(equal(this.state.data.values, defaultValues)){
-                this.setState({data: {values: changedValues}});
-            } else {
-                this.setState({data: {values: defaultValues}});
-            }
+        if (!equal(this.props.mode, prevProps.mode)) {
+            this.setState({data: {values: this.getValues(this.props.mode)}});
         }
     }
 

@@ -7,11 +7,11 @@ class App extends Component {
 
     constructor(props, context) {
         super(props, context);
-        this.state = {changeVis: false}
+        this.state = {mode: 1}
     }
 
-    changeVis(){
-        this.setState({changeVis: !this.state.changeVis});
+    changeVis(id) {
+        this.setState({mode: id});
     }
 
     render() {
@@ -19,10 +19,15 @@ class App extends Component {
             <div className="App row">
                 <div className="legend column left" id="legend">
                     <Legend/>
-                    <button className="btn btn-info" onClick={() => this.changeVis()}> Change Vis</button>
+                    <button className="btn btn-info" onClick={() => this.changeVis(1)}> 1</button>
+                    <button className="btn btn-info" onClick={() => this.changeVis(2)}> 2</button>
+                    <button className="btn btn-info" onClick={() => this.changeVis(3)}> 3</button>
+                    <button className="btn btn-info" onClick={() => this.changeVis(4)}> 4</button>
+                    <button className="btn btn-info" onClick={() => this.changeVis(5)}> 5</button>
+                    <button className="btn btn-info" onClick={() => this.changeVis(6)}> 6</button>
                 </div>
                 <div className="visualization column right">
-                    <BarChart changeVis={this.state.changeVis}/>
+                    <BarChart mode={this.state.mode}/>
                 </div>
             </div>
         );
