@@ -1,20 +1,23 @@
 import React, {Component} from 'react';
+import equal from 'fast-deep-equal';
+import {getModeData} from "./ModeDataProvider";
 
 export default class Legend extends Component {
 
+    constructor(props, context) {
+        super(props, context);
+        this.state = {text: getModeData(props.mode).text};
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        if (!equal(this.props.mode, prevProps.mode)) {
+            this.setState({text: getModeData(this.props.mode).text});
+        }
+    }
+
     render() {
         return <div><h2>Guided Valid</h2>
-            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
-                ut labore et
-                dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-                rebum. Stet
-                clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor
-                sit amet,
-                consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                aliquyam erat,
-                sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
-                gubergren, no
-                sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+            <p>{this.state.text}</p>
         </div>
     }
 }

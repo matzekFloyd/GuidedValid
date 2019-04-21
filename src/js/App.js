@@ -55,37 +55,41 @@ class App extends Component {
         this.setState({mode: id});
     }
 
-    render() {
+    initSteps() {
         const {stepsEnabled, steps, initialStep} = this.state;
+
+        return <Steps
+            enabled={stepsEnabled}
+            steps={steps}
+            initialStep={initialStep}
+            ref={steps => (this.steps = steps)}
+            onChange={stepIndex => this.changeVis(stepIndex + 1)}
+            onExit={this.onExit}
+            element={'.selector'}
+            options={{
+                keyboardNavigation: true,
+                showBullets: false,
+                exitOnEsc: false,
+                exitOnOverlayClick: false,
+                overlayOpacity: 0.1
+            }}
+        />
+    }
+
+    render() {
 
         return (
             <div className="App row">
-                <Steps
-                    enabled={stepsEnabled}
-                    steps={steps}
-                    initialStep={initialStep}
-                    ref={steps => (this.steps = steps)}
-                    onChange={stepIndex => this.changeVis(stepIndex)}
-                    onExit={this.onExit}
-                    element={'.selector'}
-                    options={{
-                        keyboardNavigation: false,
-                        showBullets: false,
-                        exitOnEsc: false,
-                        exitOnOverlayClick: false,
-                        overlayOpacity: 0.1
-                    }}
-                />
-
+                {this.initSteps()}
                 <div className="legend column left" id="legend">
-                    <Legend/>
-                    <button className="btn1 btn btn-info" onClick={() => this.changeVis(1)}> 1</button>
-                    <button className="btn2 btn btn-info" onClick={() => this.changeVis(2)}> 2</button>
-                    <button className="btn3 btn btn-info" onClick={() => this.changeVis(3)}> 3</button>
-                    <button className="btn4 btn btn-info" onClick={() => this.changeVis(4)}> 4</button>
-                    <button className="btn5 btn btn-info" onClick={() => this.changeVis(5)}> 5</button>
-                    <button className="btn6 btn btn-info" onClick={() => this.changeVis(6)}> 6</button>
-                </div>
+                    <Legend mode={this.state.mode}/>
+                    {this.state.mode === 1 ? <button className="btn1 btn btn-info show" onClick={() => this.changeVis(1)}> Button #1</button> : <button className="btn1 btn hide"/>}
+                    {this.state.mode === 2 ? <button className="btn2 btn btn-info show" onClick={() => this.changeVis(2)}> Button #2</button> : <button className="btn2 btn hide"/>}
+                    {this.state.mode === 3 ? <button className="btn3 btn btn-info show" onClick={() => this.changeVis(3)}> Button #3</button> : <button className="btn3 btn hide"/>}
+                    {this.state.mode === 4 ? <button className="btn4 btn btn-info show" onClick={() => this.changeVis(4)}> Button #4</button> : <button className="btn4 btn hide"/>}
+                    {this.state.mode === 5 ? <button className="btn5 btn btn-info show" onClick={() => this.changeVis(5)}> Button #5</button> : <button className="btn5 btn hide"/>}
+                    {this.state.mode === 6 ? <button className="btn6 btn btn-info show" onClick={() => this.changeVis(6)}> Button #6</button> : <button className="btn6 btn hide"/>}
+                    </div>
                 <div className="visualization column right">
                     <BarChart mode={this.state.mode}/>
                 </div>
