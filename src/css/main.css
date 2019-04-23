@@ -3,14 +3,15 @@
 }
 
 .left {
-  margin-left: 10%;
-  width: 17%;
-  padding: 1%;
+  margin-left: 5%;
+  width: 30%;
+  padding: 2%;
   height: 500px;
+  text-align: justify;
 }
 
 .right {
-  margin-right: 10%;
+  margin-right: 5%;
   width: 59%;
 }
 
@@ -30,6 +31,7 @@
 
 .App .visualization {
   background-color: #f3f3f3;
+  min-height: 550px;
 }
 
 .btn {

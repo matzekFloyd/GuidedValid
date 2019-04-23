@@ -43,9 +43,13 @@ class App extends Component {
 
     }
 
-    onExit = () => {
+    onExit(){
         this.setState(() => ({stepsEnabled: false}));
     };
+
+    onComplete() {
+        this.setState(() => ({stepsEnabled: false}));
+    }
 
     toggleSteps = () => {
         this.setState(prevState => ({stepsEnabled: !prevState.stepsEnabled}));
@@ -64,7 +68,8 @@ class App extends Component {
             initialStep={initialStep}
             ref={steps => (this.steps = steps)}
             onChange={stepIndex => this.changeVis(stepIndex + 1)}
-            onExit={this.onExit}
+            onComplete={() => this.onComplete()}
+            onExit={() => this.onExit()}
             element={'.selector'}
             options={{
                 keyboardNavigation: true,
@@ -83,13 +88,25 @@ class App extends Component {
                 {this.initSteps()}
                 <div className="legend column left" id="legend">
                     <Legend mode={this.state.mode}/>
-                    {this.state.mode === 1 ? <button className="btn1 btn btn-info show" onClick={() => this.changeVis(1)}> Button #1</button> : <button className="btn1 btn hide"/>}
-                    {this.state.mode === 2 ? <button className="btn2 btn btn-info show" onClick={() => this.changeVis(2)}> Button #2</button> : <button className="btn2 btn hide"/>}
-                    {this.state.mode === 3 ? <button className="btn3 btn btn-info show" onClick={() => this.changeVis(3)}> Button #3</button> : <button className="btn3 btn hide"/>}
-                    {this.state.mode === 4 ? <button className="btn4 btn btn-info show" onClick={() => this.changeVis(4)}> Button #4</button> : <button className="btn4 btn hide"/>}
-                    {this.state.mode === 5 ? <button className="btn5 btn btn-info show" onClick={() => this.changeVis(5)}> Button #5</button> : <button className="btn5 btn hide"/>}
-                    {this.state.mode === 6 ? <button className="btn6 btn btn-info show" onClick={() => this.changeVis(6)}> Button #6</button> : <button className="btn6 btn hide"/>}
-                    </div>
+                    {this.state.mode === 1 ?
+                        <button className="btn1 btn btn-info show" onClick={() => this.changeVis(1)}> Button
+                            #1</button> : <button className="btn1 btn hide"/>}
+                    {this.state.mode === 2 ?
+                        <button className="btn2 btn btn-info show" onClick={() => this.changeVis(2)}> Button
+                            #2</button> : <button className="btn2 btn hide"/>}
+                    {this.state.mode === 3 ?
+                        <button className="btn3 btn btn-info show" onClick={() => this.changeVis(3)}> Button
+                            #3</button> : <button className="btn3 btn hide"/>}
+                    {this.state.mode === 4 ?
+                        <button className="btn4 btn btn-info show" onClick={() => this.changeVis(4)}> Button
+                            #4</button> : <button className="btn4 btn hide"/>}
+                    {this.state.mode === 5 ?
+                        <button className="btn5 btn btn-info show" onClick={() => this.changeVis(5)}> Button
+                            #5</button> : <button className="btn5 btn hide"/>}
+                    {this.state.mode === 6 ?
+                        <button className="btn6 btn btn-info show" onClick={() => this.changeVis(6)}> Button
+                            #6</button> : <button className="btn6 btn hide"/>}
+                </div>
                 <div className="visualization column right">
                     <BarChart mode={this.state.mode}/>
                 </div>

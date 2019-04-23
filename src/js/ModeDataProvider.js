@@ -2,14 +2,10 @@ const MODE_1 = {
     mark: "bar",
     spec: {
         mark: "bar",
-        encoding: {x: {field: "a", type: "ordinal"}, y: {field: "b", type: "quantitative"}},
+        encoding: {x: null, y: {field: "b", type: "quantitative"}},
     },
     data: {
-        values: [
-            {a: "A", b: 20}, {a: "B", b: 34}, {a: "C", b: 55},
-            {a: "D", b: 19}, {a: "E", b: 40}, {a: "F", b: 34},
-            {a: "G", b: 91}, {a: "H", b: 78}, {a: "I", b: 25}
-        ]
+        values: []
     },
     mode: 1,
     text: "He as compliment unreserved projecting. Between had observe pretend delight for believe. Do newspaper questions consulted sweetness do. Our sportsman his unwilling fulfilled departure law. Now world own total saved above her cause table. Wicket myself her square remark the should far secure sex. Smiling cousins warrant law explain for whether. "
@@ -23,9 +19,12 @@ const MODE_2 = {
     },
     data: {
         values: [
-            {a: "A", b: 13}, {a: "B", b: 16}, {a: "C", b: 37},
-            {a: "D", b: 22}, {a: "E", b: 41}, {a: "F", b: 70},
-            {a: "G", b: 71}, {a: "H", b: 39}, {a: "I", b: 12}
+            {a: "A", b: 0}, {a: "B", b: 0}, {a: "C", b: 0}, {a: "D", b: 0}, {a: "E", b: 0},
+            {a: "F", b: 0}, {a: "G", b: 0}, {a: "H", b: 0}, {a: "I", b: 0}, {a: "J", b: 0},
+            {a: "K", b: 0}, {a: "L", b: 0}, {a: "M", b: 0}, {a: "N", b: 0}, {a: "O", b: 0},
+            {a: "P", b: 0}, {a: "Q", b: 0}, {a: "R", b: 0}, {a: "S", b: 0}, {a: "T", b: 0},
+            {a: "U", b: 0}, {a: "V", b: 0}, {a: "W", b: 0}, {a: "X", b: 0}, {a: "Y", b: 0},
+            {a: "Z", b: 0}
         ]
     },
     mode: 2,
@@ -36,13 +35,19 @@ const MODE_3 = {
     mark: "bar",
     spec: {
         mark: "bar",
-        encoding: {x: {field: "a", type: "ordinal"}, y: {field: "b", type: "quantitative"}},
+        encoding: {
+            x: {field: "a", type: "ordinal"},
+            y: {field: "b", type: "quantitative", "scale": {"domain": [0, 100]}}
+        },
     },
     data: {
         values: [
-            {a: "A", b: 45}, {a: "B", b: 34}, {a: "C", b: 55},
-            {a: "D", b: 29}, {a: "E", b: 40}, {a: "F", b: 34},
-            {a: "G", b: 18}, {a: "H", b: 78}, {a: "I", b: 25}
+            {a: "A", b: 1}, {a: "B", b: 1}, {a: "C", b: 1}, {a: "D", b: 1}, {a: "E", b: 1},
+            {a: "F", b: 1}, {a: "G", b: 1}, {a: "H", b: 1}, {a: "I", b: 1}, {a: "J", b: 1},
+            {a: "K", b: 1}, {a: "L", b: 1}, {a: "M", b: 1}, {a: "N", b: 1}, {a: "O", b: 1},
+            {a: "P", b: 1}, {a: "Q", b: 1}, {a: "R", b: 1}, {a: "S", b: 1}, {a: "T", b: 1},
+            {a: "U", b: 1}, {a: "V", b: 1}, {a: "W", b: 1}, {a: "X", b: 1}, {a: "Y", b: 1},
+            {a: "Z", b: 1}
         ]
     },
     mode: 3,
@@ -53,13 +58,19 @@ const MODE_4 = {
     mark: "bar",
     spec: {
         mark: "bar",
-        encoding: {x: {field: "a", type: "ordinal"}, y: {field: "b", type: "quantitative"}},
+        encoding: {
+            x: {field: "a", type: "ordinal"},
+            y: {field: "b", type: "quantitative", "scale": {"domain": [0, 100]}}
+        },
     },
     data: {
         values: [
-            {a: "A", b: 2}, {a: "B", b: 14}, {a: "C", b: 23},
-            {a: "D", b: 9}, {a: "E", b: 73}, {a: "F", b: 34},
-            {a: "G", b: 24}, {a: "H", b: 48}, {a: "I", b: 46}
+            {a: "A", b: 80}, {a: "B", b: 48}, {a: "C", b: 86}, {a: "D", b: 88}, {a: "E", b: 3},
+            {a: "F", b: 4}, {a: "G", b: 14}, {a: "H", b: 94}, {a: "I", b: 40}, {a: "J", b: 83},
+            {a: "K", b: 87}, {a: "L", b: 18}, {a: "M", b: 39}, {a: "N", b: 69}, {a: "O", b: 95},
+            {a: "P", b: 36}, {a: "Q", b: 5}, {a: "R", b: 11}, {a: "S", b: 57}, {a: "T", b: 22},
+            {a: "U", b: 6}, {a: "V", b: 75}, {a: "W", b: 78}, {a: "X", b: 56}, {a: "Y", b: 52},
+            {a: "Z", b: 99}
         ]
     },
     mode: 4,
@@ -70,13 +81,20 @@ const MODE_5 = {
     mark: "bar",
     spec: {
         mark: "bar",
-        encoding: {x: {field: "a", type: "ordinal"}, y: {field: "b", type: "quantitative"}},
+        encoding: {
+            x: {field: "a", type: "ordinal"},
+            y: {field: "b", type: "quantitative", "scale": {"domain": [0, 100]}},
+            color: {field: "a", type: "nominal", legend: null}
+        },
     },
     data: {
         values: [
-            {a: "A", b: 20}, {a: "B", b: 14}, {a: "C", b: 55},
-            {a: "D", b: 20}, {a: "E", b: 44}, {a: "F", b: 23},
-            {a: "G", b: 19}, {a: "H", b: 99}, {a: "I", b: 12}
+            {a: "A", b: 80}, {a: "B", b: 48}, {a: "C", b: 86}, {a: "D", b: 88}, {a: "E", b: 3},
+            {a: "F", b: 4}, {a: "G", b: 14}, {a: "H", b: 94}, {a: "I", b: 40}, {a: "J", b: 83},
+            {a: "K", b: 87}, {a: "L", b: 18}, {a: "M", b: 39}, {a: "N", b: 69}, {a: "O", b: 95},
+            {a: "P", b: 36}, {a: "Q", b: 5}, {a: "R", b: 11}, {a: "S", b: 57}, {a: "T", b: 22},
+            {a: "U", b: 6}, {a: "V", b: 75}, {a: "W", b: 78}, {a: "X", b: 56}, {a: "Y", b: 52},
+            {a: "Z", b: 99}
         ]
     },
     mode: 5,
@@ -87,13 +105,20 @@ const MODE_6 = {
     mark: "bar",
     spec: {
         mark: "bar",
-        encoding: {x: {field: "a", type: "ordinal"}, y: {field: "b", type: "quantitative"}},
+        encoding: {
+            x: {field: "a", type: "ordinal"},
+            y: {field: "b", type: "quantitative", "scale": {"domain": [0, 100]}},
+            color: {field: "a", type: "nominal"}
+        },
     },
     data: {
         values: [
-            {a: "A", b: 68}, {a: "B", b: 37}, {a: "C", b: 45},
-            {a: "D", b: 35}, {a: "E", b: 23}, {a: "F", b: 46},
-            {a: "G", b: 23}, {a: "H", b: 19}, {a: "I", b: 58}
+            {a: "A", b: 80}, {a: "B", b: 48}, {a: "C", b: 86}, {a: "D", b: 88}, {a: "E", b: 3},
+            {a: "F", b: 4}, {a: "G", b: 14}, {a: "H", b: 94}, {a: "I", b: 40}, {a: "J", b: 83},
+            {a: "K", b: 87}, {a: "L", b: 18}, {a: "M", b: 39}, {a: "N", b: 69}, {a: "O", b: 95},
+            {a: "P", b: 36}, {a: "Q", b: 5}, {a: "R", b: 11}, {a: "S", b: 57}, {a: "T", b: 22},
+            {a: "U", b: 6}, {a: "V", b: 75}, {a: "W", b: 78}, {a: "X", b: 56}, {a: "Y", b: 52},
+            {a: "Z", b: 99}
         ]
     },
     mode: 6,
