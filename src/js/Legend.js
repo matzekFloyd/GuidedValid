@@ -17,7 +17,7 @@ export default class Legend extends Component {
 
     render() {
         return <div><h2>Guided Valid</h2>
-            <p>{this.state.text}</p>
+            <p style={{minHeight: 300 + "px"}}>{this.state.text}</p>
         </div>
     }
 }
