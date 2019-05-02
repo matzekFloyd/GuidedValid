@@ -20,11 +20,7 @@ const MODE_2 = {
     data: {
         values: [
             {a: "A", b: 0}, {a: "B", b: 0}, {a: "C", b: 0}, {a: "D", b: 0}, {a: "E", b: 0},
-            {a: "F", b: 0}, {a: "G", b: 0}, {a: "H", b: 0}, {a: "I", b: 0}, {a: "J", b: 0},
-            {a: "K", b: 0}, {a: "L", b: 0}, {a: "M", b: 0}, {a: "N", b: 0}, {a: "O", b: 0},
-            {a: "P", b: 0}, {a: "Q", b: 0}, {a: "R", b: 0}, {a: "S", b: 0}, {a: "T", b: 0},
-            {a: "U", b: 0}, {a: "V", b: 0}, {a: "W", b: 0}, {a: "X", b: 0}, {a: "Y", b: 0},
-            {a: "Z", b: 0}
+            {a: "F", b: 0}, {a: "G", b: 0}, {a: "H", b: 0}, {a: "I", b: 0}, {a: "J", b: 0}
         ]
     },
     mode: 2,
@@ -42,12 +38,8 @@ const MODE_3 = {
     },
     data: {
         values: [
-            {a: "A", b: 1}, {a: "B", b: 1}, {a: "C", b: 1}, {a: "D", b: 1}, {a: "E", b: 1},
-            {a: "F", b: 1}, {a: "G", b: 1}, {a: "H", b: 1}, {a: "I", b: 1}, {a: "J", b: 1},
-            {a: "K", b: 1}, {a: "L", b: 1}, {a: "M", b: 1}, {a: "N", b: 1}, {a: "O", b: 1},
-            {a: "P", b: 1}, {a: "Q", b: 1}, {a: "R", b: 1}, {a: "S", b: 1}, {a: "T", b: 1},
-            {a: "U", b: 1}, {a: "V", b: 1}, {a: "W", b: 1}, {a: "X", b: 1}, {a: "Y", b: 1},
-            {a: "Z", b: 1}
+            {a: "A", b: 50}, {a: "B", b: 50}, {a: "C", b: 50}, {a: "D", b: 50}, {a: "E", b: 50},
+            {a: "F", b: 50}, {a: "G", b: 50}, {a: "H", b: 50}, {a: "I", b: 50}, {a: "J", b: 50}
         ]
     },
     mode: 3,
@@ -65,12 +57,8 @@ const MODE_4 = {
     },
     data: {
         values: [
-            {a: "A", b: 80}, {a: "B", b: 48}, {a: "C", b: 86}, {a: "D", b: 88}, {a: "E", b: 3},
-            {a: "F", b: 4}, {a: "G", b: 14}, {a: "H", b: 94}, {a: "I", b: 40}, {a: "J", b: 83},
-            {a: "K", b: 87}, {a: "L", b: 18}, {a: "M", b: 39}, {a: "N", b: 69}, {a: "O", b: 95},
-            {a: "P", b: 36}, {a: "Q", b: 5}, {a: "R", b: 11}, {a: "S", b: 57}, {a: "T", b: 22},
-            {a: "U", b: 6}, {a: "V", b: 75}, {a: "W", b: 78}, {a: "X", b: 56}, {a: "Y", b: 52},
-            {a: "Z", b: 99}
+            {a: "A", b: 80}, {a: "B", b: 48}, {a: "C", b: 86}, {a: "D", b: 88}, {a: "E", b: 13},
+            {a: "F", b: 24}, {a: "G", b: 14}, {a: "H", b: 94}, {a: "I", b: 40}, {a: "J", b: 83}
         ]
     },
     mode: 4,
@@ -84,44 +72,16 @@ const MODE_5 = {
         encoding: {
             x: {field: "a", type: "ordinal"},
             y: {field: "b", type: "quantitative", "scale": {"domain": [0, 100]}},
-            color: {field: "a", type: "nominal", legend: null}
+            color: {field: "category", type: "nominal"}
         },
     },
     data: {
         values: [
-            {a: "A", b: 80}, {a: "B", b: 48}, {a: "C", b: 86}, {a: "D", b: 88}, {a: "E", b: 3},
-            {a: "F", b: 4}, {a: "G", b: 14}, {a: "H", b: 94}, {a: "I", b: 40}, {a: "J", b: 83},
-            {a: "K", b: 87}, {a: "L", b: 18}, {a: "M", b: 39}, {a: "N", b: 69}, {a: "O", b: 95},
-            {a: "P", b: 36}, {a: "Q", b: 5}, {a: "R", b: 11}, {a: "S", b: 57}, {a: "T", b: 22},
-            {a: "U", b: 6}, {a: "V", b: 75}, {a: "W", b: 78}, {a: "X", b: 56}, {a: "Y", b: 52},
-            {a: "Z", b: 99}
+            {category: "B", a: "A", b: 80}, {category: "B", a: "B", b: 48}, {category: "B", a: "C", b: 86}, {category: "A",a: "D", b: 88}, {category: "B",a: "E", b: 13},
+            {category: "B", a: "F", b: 24}, {category: "B", a: "G", b: 14}, {category: "A",a: "H", b: 94}, {category: "A",a: "I", b: 40}, {category: "C",a: "J", b: 83}
         ]
     },
     mode: 5,
-    text: "Is education residence conveying so so. Suppose shyness say ten behaved morning had. Any unsatiable assistance compliment occasional too reasonably advantages. Unpleasing has ask acceptance partiality alteration understood two. Worth no tiled my at house added. Married he hearing am it totally removal. Remove but suffer wanted his lively length. Moonlight two applauded conveying end direction old principle but. Are expenses distance weddings perceive strongly who age domestic."
-};
-
-const MODE_6 = {
-    mark: "bar",
-    spec: {
-        mark: "bar",
-        encoding: {
-            x: {field: "a", type: "ordinal"},
-            y: {field: "b", type: "quantitative", "scale": {"domain": [0, 100]}},
-            color: {field: "a", type: "nominal"}
-        },
-    },
-    data: {
-        values: [
-            {a: "A", b: 80}, {a: "B", b: 48}, {a: "C", b: 86}, {a: "D", b: 88}, {a: "E", b: 3},
-            {a: "F", b: 4}, {a: "G", b: 14}, {a: "H", b: 94}, {a: "I", b: 40}, {a: "J", b: 83},
-            {a: "K", b: 87}, {a: "L", b: 18}, {a: "M", b: 39}, {a: "N", b: 69}, {a: "O", b: 95},
-            {a: "P", b: 36}, {a: "Q", b: 5}, {a: "R", b: 11}, {a: "S", b: 57}, {a: "T", b: 22},
-            {a: "U", b: 6}, {a: "V", b: 75}, {a: "W", b: 78}, {a: "X", b: 56}, {a: "Y", b: 52},
-            {a: "Z", b: 99}
-        ]
-    },
-    mode: 6,
     text: "Why end might ask civil again spoil. She dinner she our horses depend. Remember at children by reserved to vicinity. In affronting unreserved delightful simplicity ye. Law own advantage furniture continual sweetness bed agreeable perpetual. Oh song well four only head busy it. Afford son she had lively living. Tastes lovers myself too formal season our valley boy. Lived it their their walls might to by young."
 };
 
@@ -131,7 +91,6 @@ const MODES = {
     "3": MODE_3,
     "4": MODE_4,
     "5": MODE_5,
-    "6": MODE_6
 };
 
 export function getModeData(id) {
@@ -147,8 +106,6 @@ export function getModeData(id) {
             return MODES["4"];
         case 5:
             return MODES["5"];
-        case 6:
-            return MODES["6"];
         default:
             return MODES["1"];
     }

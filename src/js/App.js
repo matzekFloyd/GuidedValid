@@ -34,10 +34,6 @@ class App extends Component {
                     element: '.btn5',
                     intro: 'Clicking this button changes the Visualization',
                 },
-                {
-                    element: '.btn6',
-                    intro: 'Clicking this button changes the Visualization',
-                },
             ],
             mode: 1
         };
@@ -83,38 +79,33 @@ class App extends Component {
     }
 
     render() {
-
-        return (
-            <div className="App row">
-                {this.initSteps()}
-                <div className="legend column left" id="legend">
-                    <Legend mode={this.state.mode}/>
-                    <div className="tourButtons">
-                        {this.state.mode === 1 || this.state.tourFinished ?
-                            <button className="btn1 btn btn-info show" onClick={() => this.changeVis(1)}> Button
-                                #1</button> : <button className="btn1 btn hide"/>}
-                        {this.state.mode === 2 || this.state.tourFinished ?
-                            <button className="btn2 btn btn-info show" onClick={() => this.changeVis(2)}> Button
-                                #2</button> : <button className="btn2 btn hide"/>}
-                        {this.state.mode === 3 || this.state.tourFinished ?
-                            <button className="btn3 btn btn-info show" onClick={() => this.changeVis(3)}> Button
-                                #3</button> : <button className="btn3 btn hide"/>}
-                        {this.state.mode === 4 || this.state.tourFinished ?
-                            <button className="btn4 btn btn-info show" onClick={() => this.changeVis(4)}> Button
-                                #4</button> : <button className="btn4 btn hide"/>}
-                        {this.state.mode === 5 || this.state.tourFinished ?
-                            <button className="btn5 btn btn-info show" onClick={() => this.changeVis(5)}> Button
-                                #5</button> : <button className="btn5 btn hide"/>}
-                        {this.state.mode === 6 || this.state.tourFinished ?
-                            <button className="btn6 btn btn-info show" onClick={() => this.changeVis(6)}> Button
-                                #6</button> : <button className="btn6 btn hide"/>}
-                    </div>
-                </div>
-                <div className="visualization column right">
-                    <BarChart mode={this.state.mode}/>
+        // noinspection ThisExpressionReferencesGlobalObjectJS
+        return <div className="App row">
+            {this.initSteps()}
+            <div className="legend column left" id="legend">
+                <Legend mode={this.state.mode}/>
+                <div className="tourButtons">
+                    {this.state.mode === 1 || this.state.tourFinished ?
+                        <button className="btn1 btn btn-info show" onClick={() => this.changeVis(1)}> Button
+                            #1</button> : <button className="btn1 btn hide"/>}
+                    {this.state.mode === 2 || this.state.tourFinished ?
+                        <button className="btn2 btn btn-info show" onClick={() => this.changeVis(2)}> Button
+                            #2</button> : <button className="btn2 btn hide"/>}
+                    {this.state.mode === 3 || this.state.tourFinished ?
+                        <button className="btn3 btn btn-info show" onClick={() => this.changeVis(3)}> Button
+                            #3</button> : <button className="btn3 btn hide"/>}
+                    {this.state.mode === 4 || this.state.tourFinished ?
+                        <button className="btn4 btn btn-info show" onClick={() => this.changeVis(4)}> Button
+                            #4</button> : <button className="btn4 btn hide"/>}
+                    {this.state.mode === 5 || this.state.tourFinished ?
+                        <button className="btn5 btn btn-info show" onClick={() => this.changeVis(5)}> Button
+                            #5</button> : <button className="btn5 btn hide"/>}
                 </div>
             </div>
-        );
+            <div className="visualization column right">
+                <BarChart mode={this.state.mode}/>
+            </div>
+        </div>;
     }
 }
 
