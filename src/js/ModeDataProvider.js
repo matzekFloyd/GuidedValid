@@ -8,8 +8,9 @@ const MODE_1 = {
         values: []
     },
     mode: 1,
-    text: "He as compliment unreserved projecting. Between had observe pretend delight for believe. Do newspaper questions consulted sweetness do. Our sportsman his unwilling fulfilled departure law. Now world own total saved above her cause table. Wicket myself her square remark the should far secure sex. Smiling cousins warrant law explain for. "
+    text: "As known as Bar Graph or Column Graph. The classic Bar Chart uses either horizontal or vertical bars (column chart) to show discrete, numerical comparisons across categories."
 };
+
 
 const MODE_2 = {
     mark: "bar",
@@ -24,7 +25,7 @@ const MODE_2 = {
         ]
     },
     mode: 2,
-    text: "He difficult contented we determine ourselves me am earnestly. Hour no find it park. Eat welcomed any husbands moderate. Led was misery played waited almost cousin living. Of intention contained is by middleton am. Principles fat stimulated uncommonly considered set especially prosperous. Sons at park mr meet as fact like."
+    text: "As known as Bar Graph or Column Graph. The classic Bar Chart uses either horizontal or vertical bars (column chart) to show discrete, numerical comparisons across categories. One axis of the chart shows the specific categories being compared and the other axis represents a discrete value scale."
 };
 
 const MODE_3 = {
@@ -43,7 +44,7 @@ const MODE_3 = {
         ]
     },
     mode: 3,
-    text: "Picture removal detract earnest is by. Esteems met joy attempt way clothes yet demesne tedious. Replying an marianne do it an entrance advanced. Two dare say play when hold. Required bringing me material stanhill jointure is as he. Mutual indeed yet her living result matter him bed whence."
+    text: "As known as Bar Graph or Column Graph. The classic Bar Chart uses either horizontal or vertical bars (column chart) to show discrete, numerical comparisons across categories. One axis of the chart shows the specific categories being compared and the other axis represents a discrete value scale. Bars Charts are distinguished from Histograms, as they do not display continuous developments over an interval. "
 };
 
 const MODE_4 = {
@@ -62,7 +63,7 @@ const MODE_4 = {
         ]
     },
     mode: 4,
-    text: "In on announcing if of comparison pianoforte projection. Maids hoped gay yet bed asked blind dried point. On abroad danger likely regret twenty edward do. Too horrible consider followed may differed age. An rest if more five mr of. Age just her rank met down way. Attended required so in cheerful an. Domestic replying she resolved him for did. Rather in lasted no within no."
+    text: "As known as Bar Graph or Column Graph. The classic Bar Chart uses either horizontal or vertical bars (column chart) to show discrete, numerical comparisons across categories. One axis of the chart shows the specific categories being compared and the other axis represents a discrete value scale. Bars Charts are distinguished from Histograms, as they do not display continuous developments over an interval. Bar Chart's discrete data is categorical data and therefore answers the question of \"how many?\" in each category."
 };
 
 const MODE_5 = {
@@ -77,12 +78,20 @@ const MODE_5 = {
     },
     data: {
         values: [
-            {category: "B", a: "A", b: 80}, {category: "B", a: "B", b: 48}, {category: "B", a: "C", b: 86}, {category: "A",a: "D", b: 88}, {category: "B",a: "E", b: 13},
-            {category: "B", a: "F", b: 24}, {category: "B", a: "G", b: 14}, {category: "A",a: "H", b: 94}, {category: "A",a: "I", b: 40}, {category: "C",a: "J", b: 83}
+            {category: "B", a: "A", b: 80}, {category: "B", a: "B", b: 48}, {
+                category: "B",
+                a: "C",
+                b: 86
+            }, {category: "A", a: "D", b: 88}, {category: "B", a: "E", b: 13},
+            {category: "B", a: "F", b: 24}, {category: "B", a: "G", b: 14}, {
+                category: "A",
+                a: "H",
+                b: 94
+            }, {category: "A", a: "I", b: 40}, {category: "C", a: "J", b: 83}
         ]
     },
     mode: 5,
-    text: "Why end might ask civil again spoil. She dinner she our horses depend. Remember at children by reserved to vicinity. In affronting unreserved delightful simplicity ye. Law own advantage furniture continual sweetness bed agreeable perpetual. Oh song well four only head busy it. Afford son she had lively living. Tastes lovers myself too formal season our valley boy. Lived it their their walls might to by young."
+    text: "As known as Bar Graph or Column Graph. The classic Bar Chart uses either horizontal or vertical bars (column chart) to show discrete, numerical comparisons across categories. One axis of the chart shows the specific categories being compared and the other axis represents a discrete value scale. Bars Charts are distinguished from Histograms, as they do not display continuous developments over an interval. Bar Chart's discrete data is categorical data and therefore answers the question of \"how many?\" in each category. One major flaw with Bar Charts is that labelling becomes problematic when there are a large number of bars."
 };
 
 const MODES = {

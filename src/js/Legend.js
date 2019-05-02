@@ -18,6 +18,8 @@ export default class Legend extends Component {
     render() {
         // noinspection ThisExpressionReferencesGlobalObjectJS
         return <div><h2>Guided Valid</h2>
+            <br/>
+            <h4>Description</h4>
             <p style={{minHeight: 300 + "px"}}>{this.state.text}</p>
         </div>
     }
