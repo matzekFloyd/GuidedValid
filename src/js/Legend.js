@@ -6,12 +6,12 @@ export default class Legend extends Component {
 
     constructor(props, context) {
         super(props, context);
-        this.state = {text: getModeData(props.mode).text};
+        this.state = {text: getModeData(props.mode, props.view).text};
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
-        if (!equal(this.props.mode, prevProps.mode)) {
-            this.setState({text: getModeData(this.props.mode).text});
+        if (!equal(this.props.mode, prevProps.mode || !equal(this.props.view, prevProps.view))) {
+            this.setState({text: getModeData(this.props.mode, this.props.view).text});
         }
     }
 

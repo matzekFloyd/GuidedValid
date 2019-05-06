@@ -7,12 +7,12 @@ export default class BarChart extends Component {
 
     constructor(props, context) {
         super(props, context);
-        this.state = getModeData(0);
+        this.state = getModeData(0, props.view);
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
-        if (!equal(this.props.mode, prevProps.mode)) {
-            this.setState(getModeData(this.props.mode));
+        if (!equal(this.props.mode, prevProps.mode || !equal(this.props.view, prevProps.view))) {
+            this.setState(getModeData(this.props.mode, this.props.view));
         }
     }
 
