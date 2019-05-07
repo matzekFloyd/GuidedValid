@@ -91,8 +91,13 @@ class App extends Component {
         return <div className="App row">
 
             {this.state.tourFinished ? <div style={{padding: 30 + "px"}}>
-                <button style={{marginRight: 10 + "px"}} className={this.state.view === ABSTRACT ? "btn btn-info active" : "btn-info"} onClick={() => this.setView(ABSTRACT)}> Abstract</button>
-                <button className={this.state.view === CONCRETE ? "btn btn-info active" : "btn-info"} onClick={() => this.setView(CONCRETE)}> Concrete</button>
+                <button style={{marginRight: 10 + "px"}}
+                        className={this.state.view === ABSTRACT ? "btn btn-info active" : "btn"}
+                        onClick={() => this.setView(ABSTRACT)}> Abstract
+                </button>
+                <button className={this.state.view === CONCRETE ? "btn btn-info active" : "btn"}
+                        onClick={() => this.setView(CONCRETE)}> Concrete
+                </button>
             </div> : <div/>}
 
             <div className="steps-form">
