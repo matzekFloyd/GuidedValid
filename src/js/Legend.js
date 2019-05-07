@@ -10,7 +10,7 @@ export default class Legend extends Component {
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
-        if (!equal(this.props.mode, prevProps.mode || !equal(this.props.view, prevProps.view))) {
+        if (!equal(this.props.mode, prevProps.mode) || !equal(this.props.view, prevProps.view)) {
             this.setState({text: getModeData(this.props.mode, this.props.view).text});
         }
     }
