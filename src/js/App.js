@@ -76,7 +76,7 @@ class App extends Component {
             options={{
                 keyboardNavigation: true,
                 showBullets: false,
-                overlayOpacity: 0.5,
+                overlayOpacity: 0,
                 showProgress: true
             }}
         />

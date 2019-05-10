@@ -5,12 +5,10 @@ const MODE_1 = {
         encoding: {x: {field: "a", type: "ordinal"}, y: {field: "b", type: "quantitative"}},
     },
     data: {
-        values: [
-
-        ]
+        values: []
     },
     mode: 1,
-    text: "As known as Bar Graph or Column Graph. The classic Bar Chart uses either horizontal or vertical bars (column chart) to show discrete, numerical comparisons across categories. One axis of the chart shows the specific categories being compared and the other axis represents a discrete value scale.  "
+    text: "<p> As known as Bar Graph or Column Graph. The classic Bar Chart uses either horizontal or vertical bars (column chart) to show discrete, numerical comparisons across categories. </p>"
 };
 
 
@@ -27,7 +25,7 @@ const MODE_2 = {
         ]
     },
     mode: 2,
-    text: "As known as Bar Graph or Column Graph. The classic Bar Chart uses either horizontal or vertical bars (column chart) to show discrete, numerical comparisons across categories. One axis of the chart shows the specific categories being compared and the other axis represents a discrete value scale. Bars Charts are distinguished from Histograms, as they do not display continuous developments over an interval. "
+    text: "<p> As known as Bar Graph or Column Graph. The classic Bar Chart uses either horizontal or vertical bars (column chart) to show discrete, numerical comparisons across categories. </p> <p> One axis of the chart shows the specific categories being compared and the other axis represents a discrete value scale. </p>"
 };
 
 const MODE_3 = {
@@ -46,7 +44,7 @@ const MODE_3 = {
         ]
     },
     mode: 3,
-    text: "As known as Bar Graph or Column Graph. The classic Bar Chart uses either horizontal or vertical bars (column chart) to show discrete, numerical comparisons across categories. One axis of the chart shows the specific categories being compared and the other axis represents a discrete value scale. Bars Charts are distinguished from Histograms, as they do not display continuous developments over an interval. Bar Chart's discrete data is categorical data and therefore answers the question of \"how many?\" in each category."
+    text: "<p> As known as Bar Graph or Column Graph. The classic Bar Chart uses either horizontal or vertical bars (column chart) to show discrete, numerical comparisons across categories. </p> <p> One axis of the chart shows the specific categories being compared and the other axis represents a discrete value scale. </p> <p> Bar Charts are distinguished from Histograms, as they do not display continuous developments over an interval. </p>"
 };
 
 const MODE_4 = {
@@ -65,7 +63,7 @@ const MODE_4 = {
         ]
     },
     mode: 4,
-    text: "As known as Bar Graph or Column Graph. The classic Bar Chart uses either horizontal or vertical bars (column chart) to show discrete, numerical comparisons across categories. One axis of the chart shows the specific categories being compared and the other axis represents a discrete value scale. Bars Charts are distinguished from Histograms, as they do not display continuous developments over an interval. Bar Chart's discrete data is categorical data and therefore answers the question of \"how many?\" in each category. One major flaw with Bar Charts is that labelling becomes problematic when there are a large number of bars."
+    text: "<p> As known as Bar Graph or Column Graph. The classic Bar Chart uses either horizontal or vertical bars (column chart) to show discrete, numerical comparisons across categories. </p> <p> One axis of the chart shows the specific categories being compared and the other axis represents a discrete value scale. </p> <p> Bar Charts are distinguished from Histograms, as they do not display continuous developments over an interval. </p> <p> Bar Chart's discrete data is categorical data and therefore answers the question of \"how many?\" in each category. </p>"
 };
 
 const MODE_5 = {
@@ -93,7 +91,7 @@ const MODE_5 = {
         ]
     },
     mode: 5,
-    text: "As known as Bar Graph or Column Graph. The classic Bar Chart uses either horizontal or vertical bars (column chart) to show discrete, numerical comparisons across categories. One axis of the chart shows the specific categories being compared and the other axis represents a discrete value scale. Bars Charts are distinguished from Histograms, as they do not display continuous developments over an interval. Bar Chart's discrete data is categorical data and therefore answers the question of \"how many?\" in each category. One major flaw with Bar Charts is that labelling becomes problematic when there are a large number of bars."
+    text: "<p> As known as Bar Graph or Column Graph. The classic Bar Chart uses either horizontal or vertical bars (column chart) to show discrete, numerical comparisons across categories. </p> <p> One axis of the chart shows the specific categories being compared and the other axis represents a discrete value scale. </p> <p> Bar Charts are distinguished from Histograms, as they do not display continuous developments over an interval. </p> <p> Bar Chart's discrete data is categorical data and therefore answers the question of \"how many?\" in each category. </p> <p> One major flaw with Bar Charts is that labelling becomes problematic when there are a large number of bars. </p>"
 };
 
 const MODES = {
