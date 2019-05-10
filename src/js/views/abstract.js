@@ -8,7 +8,7 @@ const MODE_1 = {
         values: []
     },
     mode: 1,
-    text: "<p> As known as Bar Graph or Column Graph. The classic Bar Chart uses either horizontal or vertical bars (column chart) to show discrete, numerical comparisons across categories. </p>"
+    text: "<p> <button class='txtModeBtn btn btn-success'>1</button> <span class='txtMode'> As known as Bar Graph or Column Graph. The classic Bar Chart uses either horizontal or vertical bars (column chart) to show discrete, numerical comparisons across categories. </span> </p>"
 };
 
 
@@ -25,7 +25,7 @@ const MODE_2 = {
         ]
     },
     mode: 2,
-    text: "<p> As known as Bar Graph or Column Graph. The classic Bar Chart uses either horizontal or vertical bars (column chart) to show discrete, numerical comparisons across categories. </p> <p> One axis of the chart shows the specific categories being compared and the other axis represents a discrete value scale. </p>"
+    text: "<p> <button class='txtModeBtn btn btn-secondary'>1</button> <span class='txtMode'> As known as Bar Graph or Column Graph. The classic Bar Chart uses either horizontal or vertical bars (column chart) to show discrete, numerical comparisons across categories. </span> </p> <p> <button class='txtModeBtn btn btn-success'>2</button> <span class='txtMode'> One axis of the chart shows the specific categories being compared and the other axis represents a discrete value scale. </span> </p>"
 };
 
 const MODE_3 = {
@@ -44,7 +44,7 @@ const MODE_3 = {
         ]
     },
     mode: 3,
-    text: "<p> As known as Bar Graph or Column Graph. The classic Bar Chart uses either horizontal or vertical bars (column chart) to show discrete, numerical comparisons across categories. </p> <p> One axis of the chart shows the specific categories being compared and the other axis represents a discrete value scale. </p> <p> Bar Charts are distinguished from Histograms, as they do not display continuous developments over an interval. </p>"
+    text: "<p> <button class='txtModeBtn btn btn-secondary'>1</button> <span class='txtMode'> As known as Bar Graph or Column Graph. The classic Bar Chart uses either horizontal or vertical bars (column chart) to show discrete, numerical comparisons across categories. </span> </p> <p> <button class='txtModeBtn btn btn-secondary'>2</button> <span class='txtMode'> One axis of the chart shows the specific categories being compared and the other axis represents a discrete value scale. </span> </p> <p> <button class='txtModeBtn btn btn-success'>3</button> <span class='txtMode'> Bar Charts are distinguished from Histograms, as they do not display continuous developments over an interval. </span> </p>"
 };
 
 const MODE_4 = {
@@ -63,7 +63,7 @@ const MODE_4 = {
         ]
     },
     mode: 4,
-    text: "<p> As known as Bar Graph or Column Graph. The classic Bar Chart uses either horizontal or vertical bars (column chart) to show discrete, numerical comparisons across categories. </p> <p> One axis of the chart shows the specific categories being compared and the other axis represents a discrete value scale. </p> <p> Bar Charts are distinguished from Histograms, as they do not display continuous developments over an interval. </p> <p> Bar Chart's discrete data is categorical data and therefore answers the question of \"how many?\" in each category. </p>"
+    text: "<p> <button class='txtModeBtn btn btn-secondary'>1</button> <span class='txtMode'> As known as Bar Graph or Column Graph. The classic Bar Chart uses either horizontal or vertical bars (column chart) to show discrete, numerical comparisons across categories. </span> </p> <p> <button class='txtModeBtn btn btn-secondary'>2</button> <span class='txtMode'> One axis of the chart shows the specific categories being compared and the other axis represents a discrete value scale. </span> </p> <p> <button class='txtModeBtn btn btn-secondary'>3</button> <span class='txtMode'> Bar Charts are distinguished from Histograms, as they do not display continuous developments over an interval. </span> </p> <p> <button class='txtModeBtn btn btn-success'>4</button> <span class='txtMode'> Bar Chart's discrete data is categorical data and therefore answers the question of \"how many?\" in each category. </span> </p>"
 };
 
 const MODE_5 = {
@@ -91,7 +91,7 @@ const MODE_5 = {
         ]
     },
     mode: 5,
-    text: "<p> As known as Bar Graph or Column Graph. The classic Bar Chart uses either horizontal or vertical bars (column chart) to show discrete, numerical comparisons across categories. </p> <p> One axis of the chart shows the specific categories being compared and the other axis represents a discrete value scale. </p> <p> Bar Charts are distinguished from Histograms, as they do not display continuous developments over an interval. </p> <p> Bar Chart's discrete data is categorical data and therefore answers the question of \"how many?\" in each category. </p> <p> One major flaw with Bar Charts is that labelling becomes problematic when there are a large number of bars. </p>"
+    text: "<p> <button class='txtModeBtn btn btn-secondary'>1</button> <span class='txtMode'> As known as Bar Graph or Column Graph. The classic Bar Chart uses either horizontal or vertical bars (column chart) to show discrete, numerical comparisons across categories. </span> </p> <p> <button class='txtModeBtn btn btn-secondary'>2</button> <span class='txtMode'> One axis of the chart shows the specific categories being compared and the other axis represents a discrete value scale. </span> </p> <p> <button class='txtModeBtn btn btn-secondary'>3</button> <span class='txtMode'> Bar Charts are distinguished from Histograms, as they do not display continuous developments over an interval. </span> </p> <p> <button class='txtModeBtn btn btn-secondary'>4</button> <span class='txtMode'> Bar Chart's discrete data is categorical data and therefore answers the question of \"how many?\" in each category. </span> </p> <p> <button class='txtModeBtn btn btn-success'>5</button> <span class='txtMode'> One major flaw with Bar Charts is that labelling becomes problematic when there are a large number of bars. </span> </p>"
 };
 
 const MODES = {

@@ -15,6 +15,27 @@
     width: 50%;
 }
 
+#controlPanel{
+    display: block;
+    margin: auto;
+    padding-top: 30px;
+}
+
+#controlPanel button {
+    width: 125px;
+    min-width: 50px;
+    margin-left: 15px;
+}
+
+.txtMode {
+    display: flex;
+    padding-left: 10px;
+}
+
+.txtModeBtn {
+    float: left;
+}
+
 .row:after {
     content: "";
     display: table;
