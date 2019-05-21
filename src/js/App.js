@@ -17,9 +17,11 @@ class App extends Component {
     }
 
     changeVis(id) {
-        if(id > 5) id = 5;
-        if(id < 1) id = 1;
-        this.setState({mode: id});
+        let mode = id;
+        if (id > 5) mode = 5;
+        if (id === 0) mode = 1;
+        if (id < 0) mode = 6;
+        this.setState({mode: mode});
     }
 
     setView(view) {
@@ -85,12 +87,17 @@ class App extends Component {
             <div className="visualization column right">
                 <BarChart mode={this.state.mode} view={this.state.view}/>
             </div>
-        <div id={"controlPanel"}>
-            <button className={"btn btn-secondary"} onClick={() => this.changeVis(5)}> Skip </button>
-            <button className={"btn btn-info"} onClick={() => this.changeVis(this.state.mode - 1)}> Previous </button>
-            <button className={"btn btn-info"} onClick={() => this.changeVis(this.state.mode + 1)}> Next </button>
+            <div id={"controlPanel"}>
+                <button className={"btn btn-secondary"} onClick={() => this.changeVis(-1)}> Skip</button>
+                <button className={"btn btn-info"} onClick={() => this.changeVis(this.state.mode - 1)}
+                        disabled={this.state.mode === 1}> Previous
+                </button>
+                <button className={"btn btn-info"} onClick={() => this.changeVis(this.state.mode + 1)}
+                        disabled={this.state.mode === 5}> Next
+                </button>
+            </div>
         </div>
-        </div>};
+    };
 }
 
 export default App;

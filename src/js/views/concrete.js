@@ -1,5 +1,8 @@
+let data = require("./data/sun1906.csv");
+let dataA = require("./data/sun1906a.csv");
+
 const MODE_1 = {
-    data: {url: "./data/sun1906.csv"},
+    data: {url: data},
     mark: "bar",
     spec: {
         mark: "bar",
@@ -19,12 +22,12 @@ const MODE_1 = {
 
 
 const MODE_2 = {
+    data: {url: data},
     mark: "bar",
     spec: {
         mark: "bar",
-        encoding: {x: {field: "Jan", type: "ordinal"}, y: {field: "YEAR", type: "quantitative"}},
+        encoding: {x: {field: "YEAR", type: "temporal"}, y: {field: "YEAR", type: "quantitative"}},
     },
-    data: {url: "data/sun1906.csv"},
 
     mode: 2,
     text: "As known as Bar Graph or Column Graph. The classic Bar Chart uses either horizontal or vertical bars (column chart) to show discrete, numerical comparisons across categories. One axis of the chart shows the specific categories being compared and the other axis represents a discrete value scale."
@@ -87,6 +90,7 @@ const MODES = {
 export function getConcreteModeData(id) {
     switch (id) {
         case 1:
+            console.log("A");
             return MODES["1"];
         case 2:
             return MODES["2"];
