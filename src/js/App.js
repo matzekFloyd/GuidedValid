@@ -43,7 +43,7 @@ class App extends Component {
                 <div className="App centered">
                     <h4 style={{margin: 25 + "px"}}>Understanding Barcharts</h4>
                     <BarChart mode={this.state.mode} view={ABSTRACT}/>
-                    <button className={"btn btn-info"} style={{marginLeft: 100 + "px", marginTop: 20 + "px"}} onClick={() => this.start()}> Continue</button>
+                    <button className={"btn btn-info"} style={{marginLeft: 300 + "px", marginTop: 20 + "px"}} onClick={() => this.start()}> Continue</button>
                 </div> :
                 <div className="App row">
                     <div style={{padding: 30 + "px"}}>

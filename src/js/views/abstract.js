@@ -16,7 +16,7 @@ const MODE_2 = {
     mark: "bar",
     spec: {
         mark: "bar",
-        encoding: {x: {field: "a", type: "ordinal"}, y: {field: "b", type: "quantitative"}},
+        encoding: {x: {field: "a", type: "ordinal", scale: {rangeStep: null}}, y: {field: "b", type: "quantitative"}},
     },
     data: {
         values: [
@@ -33,7 +33,7 @@ const MODE_3 = {
     spec: {
         mark: "bar",
         encoding: {
-            x: {field: "a", type: "ordinal"},
+            x: {field: "a", type: "ordinal", scale: {rangeStep: null}},
             y: {field: "b", type: "quantitative", "scale": {"domain": [0, 100]}}
         },
     },
@@ -52,7 +52,7 @@ const MODE_4 = {
     spec: {
         mark: "bar",
         encoding: {
-            x: {field: "a", type: "ordinal"},
+            x: {field: "a", type: "ordinal", scale: {rangeStep: null}},
             y: {field: "b", type: "quantitative", "scale": {"domain": [0, 100]}}
         },
     },
@@ -71,7 +71,7 @@ const MODE_5 = {
     spec: {
         mark: "bar",
         encoding: {
-            x: {field: "a", type: "ordinal"},
+            x: {field: "a", type: "ordinal", scale: {rangeStep: null}},
             y: {field: "b", type: "quantitative", "scale": {"domain": [0, 100]}},
             color: {field: "category", type: "nominal"}
         },

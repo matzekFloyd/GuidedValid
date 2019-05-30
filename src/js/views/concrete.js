@@ -43,7 +43,7 @@ const MODE_2 = {
     spec: {
         mark: "bar",
         encoding: {
-            x: {field: "a", type: "ordinal", sort: {encoding: "y"}, title: "Partei", scale: {rangeStep: null}},
+            x: {field: "a", type: "ordinal", title: "Partei", scale: {rangeStep: null}},
             y: {field: "b", type: "quantitative", title: "Anzahl erhaltener Stimmen"},
         },
     },
@@ -67,7 +67,7 @@ const MODE_3 = {
     spec: {
         mark: "bar",
         encoding: {
-            x: {field: "a", type: "ordinal", sort: {encoding: "y"}, title: "Partei", scale: {rangeStep: null}},
+            x: {field: "a", type: "ordinal", title: "Partei", scale: {rangeStep: null}},
             y: {field: "b", type: "quantitative", title: "Anzahl erhaltener Stimmen"},
         },
     },
@@ -94,9 +94,9 @@ const MODE_4 = {
     spec: {
         mark: "bar",
         encoding: {
-            x: {field: "a", type: "ordinal", sort: {encoding: "y"}, title: "Partei", scale: {rangeStep: null}},
+            x: {field: "a", type: "ordinal", title: "Partei", scale: {rangeStep: null}},
             y: {field: "b", type: "quantitative", title: "Anzahl erhaltener Stimmen"},
-            color: {field: "c", scale: false}
+            color: {field: "c", type: "nominal", scale: false}
         },
     },
     data: {
@@ -125,7 +125,7 @@ const MODE_5 = {
         encoding: {
             x: {field: "a", type: "ordinal", sort: {encoding: "y"}, title: "Partei", scale: {rangeStep: null}},
             y: {field: "b", type: "quantitative", title: "Prozent erhaltener Stimmen"},
-            color: {field: "c", scale: false}
+            color: {field: "c", type: "ordinal", scale: false}
         },
     },
     data: {
@@ -154,7 +154,7 @@ const MODE_6 = {
         encoding: {
             x: {field: "a", type: "ordinal", sort: {encoding: "y"}, title: "Partei", scale: {rangeStep: null}},
             y: {field: "b", type: "quantitative", title: "Prozent erhaltener Stimmen"},
-            color: {field: "c", scale: false}
+            color: {field: "c", type: "nominal", scale: false}
         },
     },
     data: {
