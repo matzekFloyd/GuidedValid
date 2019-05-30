@@ -99,7 +99,7 @@ const MODE_6 = {
     spec: {
         mark: "bar",
         encoding: {
-            x: {field: "a", type: "ordinal"},
+            x: {field: "a", type: "ordinal", scale: {rangeStep: null}},
             y: {field: "b", type: "quantitative", "scale": {"domain": [0, 100]}},
             color: {field: "category", type: "nominal"}
         },
