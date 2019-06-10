@@ -1,8 +1,13 @@
-import {getAbstractModeData} from "./views/abstract.js"
-import {getConcreteModeData} from "./views/concrete";
 import {ABSTRACT, CONCRETE} from "./constants";
+import {ConcreteDataProvider} from "./views/concrete";
+import {AbstractDataProvider} from "./views/abstract";
 
 export function getModeData(id, view) {
-    if (view === ABSTRACT) return getAbstractModeData(id);
-    else if (view === CONCRETE) return getConcreteModeData(id);
+    let cp = new ConcreteDataProvider();
+    let ap = new AbstractDataProvider();
+    
+    if (view === ABSTRACT) return ap.getData(id);
+    else if (view === CONCRETE) {
+        return cp.getData(id);
+    }
 }

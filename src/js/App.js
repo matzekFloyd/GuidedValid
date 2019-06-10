@@ -92,7 +92,7 @@ class App extends Component {
                     </div>
 
                     <div className="legend column left" id="legend">
-                        <Legend mode={this.state.mode} view={this.state.view}/>
+                        <Legend mode={this.state.mode} view={this.state.view} cb={(i) => this.changeVis(i)}/>
                     </div>
                     <div className="visualization column right">
                         <BarChart mode={this.state.mode} view={this.state.view}/>
