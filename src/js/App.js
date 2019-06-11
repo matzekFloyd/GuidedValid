@@ -42,6 +42,19 @@ class App extends Component {
         return (this.state.mode === mode)
     }
 
+    handleKeyBoardInput(event) {
+        if (event.key === "v") {
+            if(this.state.view === ABSTRACT) this.setState({view: CONCRETE});
+            if(this.state.view === CONCRETE) this.setState({view: ABSTRACT});
+        }
+
+        if (event.key === "1") this.setState({mode: 1});
+        if (event.key === "2") this.setState({mode: 2});
+        if (event.key === "3") this.setState({mode: 3});
+        if (event.key === "4") this.setState({mode: 4});
+        if (event.key === "5") this.setState({mode: 5});
+    };
+
     render() {
         // noinspection ThisExpressionReferencesGlobalObjectJS
         return <div>
@@ -54,7 +67,7 @@ class App extends Component {
                                 onClick={() => this.start()}> Continue
                         </button>
                     </div> :
-                    <div className="App row">
+                    <div className="App row" tabIndex={0} onKeyPress={(e) => this.handleKeyBoardInput(e)}>
                         <div style={{padding: 30 + "px"}}>
                             <button style={{marginRight: 10 + "px"}}
                                     className={this.state.view === ABSTRACT ? "btn btn-info active" : "btn"}
@@ -121,7 +134,6 @@ class App extends Component {
                                     </button>
                                     <button className={"btn btn-info"}
                                             onClick={() => this.changeVis(this.state.mode + 1)}
-                                            onKeyPress={() => this.handleKeyInput()}
                                             disabled={this.state.mode >= 5}> Next
                                     </button>
                                 </div>
