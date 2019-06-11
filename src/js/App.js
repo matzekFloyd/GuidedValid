@@ -4,16 +4,22 @@ import '../css/main.css';
 import Legend from "./Legend";
 import 'intro.js/introjs.css';
 import {ABSTRACT, CONCRETE} from "./constants";
+import {Empty, LoadingIndicator} from "./util";
 
 class App extends Component {
 
     constructor(props, context) {
         super(props, context);
         this.state = {
+            loading: true,
             init: true,
             view: ABSTRACT,
             mode: 6
         };
+    }
+
+    componentDidMount() {
+        this.setState({loading: false});
     }
 
     start() {
@@ -39,74 +45,90 @@ class App extends Component {
     render() {
         // noinspection ThisExpressionReferencesGlobalObjectJS
         return <div>
-            {this.state.init ?
-                <div className="App centered">
-                    <h4 style={{margin: 25 + "px"}}>Understanding Barcharts</h4>
-                    <BarChart mode={this.state.mode} view={ABSTRACT}/>
-                    <button className={"btn btn-info"} style={{marginLeft: 300 + "px", marginTop: 20 + "px"}} onClick={() => this.start()}> Continue</button>
-                </div> :
-                <div className="App row">
-                    <div style={{padding: 30 + "px"}}>
-                        <button style={{marginRight: 10 + "px"}}
-                                className={this.state.view === ABSTRACT ? "btn btn-info active" : "btn"}
-                                onClick={() => this.setView(ABSTRACT)}> Abstract
+            {this.state.loading ? <LoadingIndicator css={"centered"}/> :
+                this.state.init ?
+                    <div className="App centered">
+                        <h4 style={{margin: 25 + "px"}}>Understanding Barcharts</h4>
+                        <BarChart mode={this.state.mode} view={ABSTRACT}/>
+                        <button className={"btn btn-info"} style={{marginLeft: 300 + "px", marginTop: 20 + "px"}}
+                                onClick={() => this.start()}> Continue
                         </button>
-                        <button className={this.state.view === CONCRETE ? "btn btn-info active" : "btn"}
-                                onClick={() => this.setView(CONCRETE)}> Concrete
-                        </button>
-                    </div>
+                    </div> :
+                    <div className="App row">
+                        <div style={{padding: 30 + "px"}}>
+                            <button style={{marginRight: 10 + "px"}}
+                                    className={this.state.view === ABSTRACT ? "btn btn-info active" : "btn"}
+                                    onClick={() => this.setView(ABSTRACT)}> Abstract
+                            </button>
+                            <button className={this.state.view === CONCRETE ? "btn btn-info active" : "btn"}
+                                    onClick={() => this.setView(CONCRETE)}> Concrete
+                            </button>
+                        </div>
 
-                    <div className="steps-form">
-                        <div className="steps-row setup-panel">
-                            <div className="steps-step">
-                                <button
-                                    className={this.btnIsSelected(1) ? "btn btn-success" : "btn btn-secondary"}
-                                    onClick={() => this.changeVis(1)}>1
-                                </button>
+                        <div className="steps-form">
+                            <div className="steps-row setup-panel">
+                                <div className="steps-step">
+                                    <button
+                                        className={this.btnIsSelected(1) ? "btn btn-success" : "btn btn-secondary"}
+                                        onClick={() => this.changeVis(1)}>1
+                                    </button>
+                                </div>
+                                <div className="steps-step">
+                                    <button
+                                        className={this.btnIsSelected(2) ? "btn btn-success" : "btn btn-secondary"}
+                                        onClick={() => this.changeVis(2)}>2
+                                    </button>
+                                </div>
+                                <div className="steps-step">
+                                    <button
+                                        className={this.btnIsSelected(3) ? "btn btn-success" : "btn btn-secondary"}
+                                        onClick={() => this.changeVis(3)}>3
+                                    </button>
+                                </div>
+                                <div className="steps-step">
+                                    <button
+                                        className={this.btnIsSelected(4) ? "btn btn-success" : "btn btn-secondary"}
+                                        onClick={() => this.changeVis(4)}>4
+                                    </button>
+                                </div>
+                                <div className="steps-step">
+                                    <button
+                                        className={this.btnIsSelected(5) ? "btn btn-success" : "btn btn-secondary"}
+                                        onClick={() => this.changeVis(5)}>5
+                                    </button>
+                                </div>
                             </div>
-                            <div className="steps-step">
-                                <button
-                                    className={this.btnIsSelected(2) ? "btn btn-success" : "btn btn-secondary"}
-                                    onClick={() => this.changeVis(2)}>2
-                                </button>
+                        </div>
+
+                        <div className="column left" id="legend">
+                            <div>
+                                <Legend mode={this.state.mode} view={this.state.view} cb={(i) => this.changeVis(i)}/>
                             </div>
-                            <div className="steps-step">
-                                <button
-                                    className={this.btnIsSelected(3) ? "btn btn-success" : "btn btn-secondary"}
-                                    onClick={() => this.changeVis(3)}>3
-                                </button>
+                        </div>
+                        <div className="double-column right">
+                            <div className="visualization">
+                                <BarChart mode={this.state.mode} view={this.state.view}/>
                             </div>
-                            <div className="steps-step">
-                                <button
-                                    className={this.btnIsSelected(4) ? "btn btn-success" : "btn btn-secondary"}
-                                    onClick={() => this.changeVis(4)}>4
-                                </button>
-                            </div>
-                            <div className="steps-step">
-                                <button
-                                    className={this.btnIsSelected(5) ? "btn btn-success" : "btn btn-secondary"}
-                                    onClick={() => this.changeVis(5)}>5
-                                </button>
+                        </div>
+                        <div className="row 2">
+                            <div className="triple-column">
+                                <div className={"controlPanel"}>{this.state.mode >= 5 ? <Empty/> :
+                                    <button className={"btn btn-secondary"}
+                                            onClick={() => this.changeVis(-1)}> Skip</button>}
+                                    <button className={"btn btn-info"}
+                                            onClick={() => this.changeVis(this.state.mode - 1)}
+                                            disabled={this.state.mode === 1}> Previous
+                                    </button>
+                                    <button className={"btn btn-info"}
+                                            onClick={() => this.changeVis(this.state.mode + 1)}
+                                            onKeyPress={() => this.handleKeyInput()}
+                                            disabled={this.state.mode >= 5}> Next
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
-
-                    <div className="legend column left" id="legend">
-                        <Legend mode={this.state.mode} view={this.state.view} cb={(i) => this.changeVis(i)}/>
-                    </div>
-                    <div className="visualization column right">
-                        <BarChart mode={this.state.mode} view={this.state.view}/>
-                    </div>
-                    <div id={"controlPanel"}>
-                        <button className={"btn btn-secondary"} onClick={() => this.changeVis(-1)}> Skip</button>
-                        <button className={"btn btn-info"} onClick={() => this.changeVis(this.state.mode - 1)}
-                                disabled={this.state.mode === 1}> Previous
-                        </button>
-                        <button className={"btn btn-info"} onClick={() => this.changeVis(this.state.mode + 1)}
-                                disabled={this.state.mode >= 5}> Next
-                        </button>
-                    </div>
-                </div>}
+            }
         </div>
     };
 }

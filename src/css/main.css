@@ -1,62 +1,76 @@
+.App {
+    font-size: large;
+}
+
+/*---- MAIN LAYOUT ------------------ */
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
 .column {
-    float: left;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+}
+
+.double-column {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 2;
+}
+
+.triple-column {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 3;
 }
 
 .left {
     margin-left: 5%;
-    width: 30%;
+    margin-right: 5.5%;
     padding: 2%;
-    height: 500px;
     text-align: justify;
 }
 
 .right {
-    margin-right: 5%;
-    width: 50%;
+    margin-right: 7.5%;
 }
 
-#controlPanel{
-    display: block;
-    margin: auto;
-    padding-top: 30px;
+.controlPanel{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 3.5%;
 }
 
-#controlPanel button {
-    width: 125px;
+.controlPanel button {
+    width: 150px;
     min-width: 50px;
     margin-left: 15px;
 }
 
-.txtMode {
-    display: flex;
-    padding-left: 10px;
+.controlPanel button:disabled{
+    opacity: 0.25;
 }
 
-.txtModeBtn {
-    float: left;
-}
-
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-.centered {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    /* bring your own prefixes */
-    transform: translate(-50%, -50%);
-}
-
-.App {
-    font-size: medium;
-}
-
-.App .visualization {
+.visualization {
     background-color: #f3f3f3;
-    min-height: 600px;
+    width: 100%;
+    min-height: 100%;
+    padding: 0;
+    margin: 0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /*---- STEPS ------------------ */
@@ -64,7 +78,7 @@
     display: table;
     width: 100%;
     position: relative;
-    padding-bottom: 30px;
+    padding-bottom: 3.75%;
 }
 
 .steps-form .steps-row {
@@ -105,4 +119,14 @@
     line-height: 1.428571429;
     border-radius: 15px;
     margin-top: 0;
+}
+
+/*---- OTHER ------------------ */
+
+.centered {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
 }

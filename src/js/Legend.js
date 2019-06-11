@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import equal from 'fast-deep-equal';
 import {getModeData} from "./ModeDataProvider";
+import {Empty} from "./util";
+import "../css/legend.css";
 
 export default class Legend extends Component {
 
@@ -26,23 +28,23 @@ export default class Legend extends Component {
             {this.props.mode >= 1 ? <p>
                 <button className={this.getBtnClass(1)} onClick={() => this.props.cb(1)}>1</button>
                 <span className={"txtMode"} dangerouslySetInnerHTML={{__html: this.state.text.one}}/>
-            </p> : <div/>}
+            </p> : <Empty/>}
             {this.props.mode >= 2 ? <p>
                 <button className={this.getBtnClass(2)} onClick={() => this.props.cb(2)}>2</button>
                 <span className={"txtMode"} dangerouslySetInnerHTML={{__html: this.state.text.two}}/>
-            </p> : <div/>}
+            </p> : <Empty/>}
             {this.props.mode >= 3 ? <p>
                 <button className={this.getBtnClass(3)} onClick={() => this.props.cb(3)}>3</button>
                 <span className={"txtMode"} dangerouslySetInnerHTML={{__html: this.state.text.three}}/>
-            </p> : <div/>}
+            </p> : <Empty/>}
             {this.props.mode >= 4 ? <p>
                 <button className={this.getBtnClass(4)} onClick={() => this.props.cb(4)}>4</button>
                 <span className={"txtMode"} dangerouslySetInnerHTML={{__html: this.state.text.four}}/>
-            </p> : <div/>}
+            </p> : <Empty/>}
             {this.props.mode >= 5 ? <p>
                 <button className={this.getBtnClass(5)} onClick={() => this.props.cb(5)}>5</button>
                 <span className={"txtMode"} dangerouslySetInnerHTML={{__html: this.state.text.five}}/>
-            </p> : <div/>}
+            </p> : <Empty/>}
         </div>
     }
 }

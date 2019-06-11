@@ -17,6 +17,6 @@ export default class BarChart extends Component {
     }
 
     render() {
-        return <VegaLite height={500} width={600} spec={this.state.spec} data={this.state.data}/>
+        return <VegaLite height={500} width={500} spec={this.state.spec} data={this.state.data}/>
     }
 }
