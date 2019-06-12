@@ -67,7 +67,7 @@ class App extends Component {
                                 onClick={() => this.start()}> Continue
                         </button>
                     </div> :
-                    <div className="App row" tabIndex={0} onKeyPress={(e) => this.handleKeyBoardInput(e)}>
+                    <div className="App row" onKeyPress={(e) => this.handleKeyBoardInput(e)}>
                         <div style={{padding: 30 + "px"}}>
                             <button style={{marginRight: 10 + "px"}}
                                     className={this.state.view === ABSTRACT ? "btn btn-info active" : "btn"}
