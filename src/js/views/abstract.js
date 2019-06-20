@@ -25,7 +25,7 @@ export class AbstractDataProvider {
             mark: "bar",
             spec: {
                 mark: "bar",
-                encoding: {x: {field: "a", type: "ordinal"}, y: {field: "b", type: "quantitative"}},
+                encoding: {x: {field: "a", type: "ordinal", scale: {rangeStep: null}}, y: {field: "b", type: "quantitative"}},
             },
             data: {
                 values: []
@@ -117,16 +117,16 @@ export class AbstractDataProvider {
             },
             data: {
                 values: [
-                    {category: "B", a: "A", b: 80}, {category: "B", a: "B", b: 48}, {
-                        category: "B",
+                    {category: "2", a: "A", b: 80}, {category: "2", a: "B", b: 48}, {
+                        category: "2",
                         a: "C",
                         b: 86
-                    }, {category: "A", a: "D", b: 88}, {category: "B", a: "E", b: 13},
-                    {category: "B", a: "F", b: 24}, {category: "B", a: "G", b: 14}, {
-                        category: "A",
+                    }, {category: "1", a: "D", b: 88}, {category: "3", a: "E", b: 13},
+                    {category: "2", a: "F", b: 24}, {category: "2", a: "G", b: 14}, {
+                        category: "1",
                         a: "H",
                         b: 94
-                    }, {category: "A", a: "I", b: 40}, {category: "C", a: "J", b: 83}
+                    }, {category: "1", a: "I", b: 40}, {category: "3", a: "J", b: 83}
                 ]
             },
             mode: 5,
@@ -151,16 +151,16 @@ export class AbstractDataProvider {
             },
             data: {
                 values: [
-                    {category: "B", a: "A", b: 80}, {category: "B", a: "B", b: 48}, {
-                        category: "B",
+                    {category: "2", a: "A", b: 80}, {category: "2", a: "B", b: 48}, {
+                        category: "2",
                         a: "C",
                         b: 86
-                    }, {category: "A", a: "D", b: 88}, {category: "B", a: "E", b: 13},
-                    {category: "B", a: "F", b: 24}, {category: "B", a: "G", b: 14}, {
-                        category: "A",
+                    }, {category: "1", a: "D", b: 88}, {category: "3", a: "E", b: 13},
+                    {category: "2", a: "F", b: 24}, {category: "2", a: "G", b: 14}, {
+                        category: "1",
                         a: "H",
                         b: 94
-                    }, {category: "A", a: "I", b: 40}, {category: "C", a: "J", b: 83}
+                    }, {category: "1", a: "I", b: 40}, {category: "3", a: "J", b: 83}
                 ]
             },
             mode: 6,
