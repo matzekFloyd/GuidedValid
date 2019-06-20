@@ -127,17 +127,18 @@ class App extends Component {
                         </div>
                         <div className="row 2">
                             <div className="triple-column">
-                                <div className={"controlPanel"}>{this.state.mode >= 5 ? <Empty/> :
-                                    <button className={"btn btn-secondary"}
-                                            onClick={() => this.changeVis(-1)}> Skip</button>}
-                                    <button className={"btn btn-info"}
+                                <div className={"controlPanel"}>
+                                    <button id="previous" className={"btn btn-info"}
                                             onClick={() => this.changeVis(this.state.mode - 1)}
                                             disabled={this.state.mode === 1}> Previous
                                     </button>
-                                    <button className={"btn btn-info"}
+                                    <button id="next" className={"btn btn-info"}
                                             onClick={() => this.changeVis(this.state.mode + 1)}
                                             disabled={this.state.mode >= 5}> Next
                                     </button>
+                                    {this.state.mode >= 5 ? <Empty/> :
+                                        <button id="skip" className={"btn btn-secondary"}
+                                                onClick={() => this.changeVis(-1)}> Skip</button>}
                                 </div>
                             </div>
                         </div>

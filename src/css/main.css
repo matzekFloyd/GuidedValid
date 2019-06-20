@@ -46,15 +46,29 @@
     width: 40%;
 }
 
-.controlPanel button {
-    width: 30%;
-    min-width: 100px;
-    margin-top: 2%;
-    margin-left: 2%;
-}
-
 .controlPanel button:disabled {
     opacity: 0.25;
+}
+
+.controlPanel #next {
+    width: 35%;
+    min-width: 100px;
+    margin-left: 1%;
+    margin-top: 2%;
+}
+
+.controlPanel #previous {
+    width: 35%;
+    min-width: 100px;
+    margin-left: 1%;
+    margin-top: 2%;
+}
+
+.controlPanel #skip {
+    width: 7.5%;
+    min-width: 100px;
+    margin-left: 1%;
+    margin-top: 2%;
 }
 
 .visualization {
