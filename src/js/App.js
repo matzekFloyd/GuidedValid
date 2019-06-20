@@ -44,8 +44,8 @@ class App extends Component {
 
     handleKeyBoardInput(event) {
         if (event.key === "v") {
-            if(this.state.view === ABSTRACT) this.setState({view: CONCRETE});
-            if(this.state.view === CONCRETE) this.setState({view: ABSTRACT});
+            if (this.state.view === ABSTRACT) this.setState({view: CONCRETE});
+            if (this.state.view === CONCRETE) this.setState({view: ABSTRACT});
         }
 
         if (event.key === "1") this.setState({mode: 1});
@@ -125,18 +125,18 @@ class App extends Component {
                         </div>
                         <div className="row 2">
                             <div className="triple-column">
-                                <div className={"controlPanel"}>{this.state.mode >= 5 ? <Empty/> :
-                                    <button className={"btn btn-secondary"}
-                                            onClick={() => this.changeVis(-1)}> Skip</button>}
-                                    <button className={"btn btn-info"}
-                                            onClick={() => this.changeVis(this.state.mode - 1)}
-                                            disabled={this.state.mode === 1}> Previous
-                                    </button>
-                                    <button className={"btn btn-info"}
-                                            onClick={() => this.changeVis(this.state.mode + 1)}
-                                            disabled={this.state.mode >= 5}> Next
-                                    </button>
-                                </div>
+                                    <div className={"controlPanel"}>{this.state.mode >= 5 ? <Empty/> :
+                                        <button className={"btn btn-secondary"}
+                                                onClick={() => this.changeVis(-1)}> Skip</button>}
+                                        <button className={"btn btn-info"}
+                                                onClick={() => this.changeVis(this.state.mode - 1)}
+                                                disabled={this.state.mode === 1}> Previous
+                                        </button>
+                                        <button className={"btn btn-info"}
+                                                onClick={() => this.changeVis(this.state.mode + 1)}
+                                                disabled={this.state.mode >= 5}> Next
+                                        </button>
+                                    </div>
                             </div>
                         </div>
                     </div>

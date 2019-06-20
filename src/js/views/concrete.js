@@ -49,8 +49,8 @@ export class ConcreteDataProvider {
             spec: {
                 mark: "bar",
                 encoding: {
-                    x: {field: "a", type: "ordinal"},
-                    y: {field: "b", type: "quantitative", title: "Anzahl erhaltener Stimmen"}
+                    x: {field: "party", type: "ordinal", title: "Political party (Austria)", scale: {rangeStep: null}},
+                    y: {field: "votes", type: "quantitative", title: "Number of votes received"}
                 },
             },
             data: {
@@ -67,19 +67,19 @@ export class ConcreteDataProvider {
             spec: {
                 mark: "bar",
                 encoding: {
-                    x: {field: "a", type: "ordinal", title: "Partei", scale: {rangeStep: null}},
-                    y: {field: "b", type: "quantitative", title: "Anzahl erhaltener Stimmen"},
+                    x: {field: "party", type: "ordinal", title: "Political party (Austria)", scale: {rangeStep: null}},
+                    y: {field: "votes", type: "quantitative", title: "Number of votes received"},
                 },
             },
             data: {
                 url: data,
                 values: [
-                    {a: OEVP, b: 0},
-                    {a: SPOE, b: 0},
-                    {a: FPOE, b: 0},
-                    {a: GRUENE, b: 0},
-                    {a: NEOS, b: 0},
-                    {a: SONSTIGE, b: 0}
+                    {party: OEVP, votes: 0},
+                    {party: SPOE, votes: 0},
+                    {party: FPOE, votes: 0},
+                    {party: GRUENE, votes: 0},
+                    {party: NEOS, votes: 0},
+                    {party: SONSTIGE, votes: 0}
                 ]
             },
             mode: 2,
@@ -89,27 +89,26 @@ export class ConcreteDataProvider {
             }
         };
 
-        this
-            .mode_3 = {
+        this.mode_3 = {
             mark: "bar",
             spec: {
                 mark: "bar",
                 encoding: {
-                    x: {field: "a", type: "ordinal", title: "Partei", scale: {rangeStep: null}},
-                    y: {field: "b", type: "quantitative", title: "Anzahl erhaltener Stimmen"},
+                    x: {field: "party", type: "ordinal", title: "Political party (Austria)", scale: {rangeStep: null}},
+                    y: {field: "votes", type: "quantitative", title: "Number of votes received"},
                 },
             },
             data: {
                 url: data,
                 values: [
-                    {a: OEVP, b: data.G00000.ÖVP},
-                    {a: SPOE, b: data.G00000.SPÖ},
-                    {a: FPOE, b: data.G00000.FPÖ},
-                    {a: GRUENE, b: data.G00000.GRÜNE},
-                    {a: NEOS, b: data.G00000.NEOS},
+                    {party: OEVP, votes: data.G00000.ÖVP},
+                    {party: SPOE, votes: data.G00000.SPÖ},
+                    {party: FPOE, votes: data.G00000.FPÖ},
+                    {party: GRUENE, votes: data.G00000.GRÜNE},
+                    {party: NEOS, votes: data.G00000.NEOS},
                     {
-                        a: SONSTIGE,
-                        b: parseInt(data.G00000.KPÖ) + parseInt(data.G00000.EUROPA)
+                        party: SONSTIGE,
+                        votes: parseInt(data.G00000.KPÖ) + parseInt(data.G00000.EUROPA)
                     }
                 ]
             },
@@ -126,23 +125,33 @@ export class ConcreteDataProvider {
             spec: {
                 mark: "bar",
                 encoding: {
-                    x: {field: "a", type: "ordinal", title: "Partei", scale: {rangeStep: null}},
-                    y: {field: "b", type: "quantitative", title: "Anzahl erhaltener Stimmen"},
-                    color: {field: "c", type: "nominal", scale: false}
+                    x: {field: "party", type: "ordinal", title: "Political party (Austria)", scale: {rangeStep: null}},
+                    y: {field: "votes", type: "quantitative", title: "Number of votes received"},
+                    color: {
+                        field: "party", type: "nominal", title: "Political party", scale: {
+                            range: [
+                                this.getColor(FPOE),
+                                this.getColor(GRUENE),
+                                this.getColor(NEOS),
+                                this.getColor(SPOE),
+                                this.getColor(SONSTIGE),
+                                this.getColor(OEVP)
+                            ]
+                        }
+                    }
                 },
             },
             data: {
                 url: data,
                 values: [
-                    {a: OEVP, b: data.G00000.ÖVP, c: this.getColor(OEVP)},
-                    {a: SPOE, b: data.G00000.SPÖ, c: this.getColor(SPOE)},
-                    {a: FPOE, b: data.G00000.FPÖ, c: this.getColor(FPOE)},
-                    {a: GRUENE, b: data.G00000.GRÜNE, c: this.getColor(GRUENE)},
-                    {a: NEOS, b: data.G00000.NEOS, c: this.getColor(NEOS)},
+                    {party: OEVP, votes: data.G00000.ÖVP},
+                    {party: SPOE, votes: data.G00000.SPÖ},
+                    {party: FPOE, votes: data.G00000.FPÖ},
+                    {party: GRUENE, votes: data.G00000.GRÜNE},
+                    {party: NEOS, votes: data.G00000.NEOS},
                     {
-                        a: SONSTIGE,
-                        b: parseInt(data.G00000.KPÖ) + parseInt(data.G00000.EUROPA),
-                        c: this.getColor(SONSTIGE)
+                        party: SONSTIGE,
+                        votes: parseInt(data.G00000.KPÖ) + parseInt(data.G00000.EUROPA)
                     }
                 ]
             },
@@ -155,48 +164,64 @@ export class ConcreteDataProvider {
             }
         };
 
-        this
-            .mode_5 = {
+        this.mode_5 = {
             mark: "bar",
             spec: {
                 mark: "bar",
                 encoding: {
-                    x: {field: "a", type: "ordinal", sort: {encoding: "y"}, title: "Partei", scale: {rangeStep: null}},
-                    y: {field: "b", type: "quantitative", title: "Prozent erhaltener Stimmen"},
-                    color: {field: "c", type: "ordinal", scale: false}
+                    x: {
+                        field: "party",
+                        type: "ordinal",
+                        sort: {encoding: "y"},
+                        title: "Political party (Austria)",
+                        scale: {rangeStep: null}
+                    },
+                    y: {field: "votes", type: "quantitative", title: "Percent of received polling votes"},
+                    color: {
+                        field: "party", type: "nominal", title: "Political party", scale: {
+                            range: [
+                                this.getColor(FPOE),
+                                this.getColor(GRUENE),
+                                this.getColor(NEOS),
+                                this.getColor(SPOE),
+                                this.getColor(SONSTIGE),
+                                this.getColor(OEVP)
+                            ]
+                        }
+                    }
                 },
             },
             data: {
                 url: data,
                 values: [
                     {
-                        a: OEVP,
-                        b: this.calculatePercentage(data.G00000.ÖVP, data.G00000.abgegeben),
+                        party: OEVP,
+                        votes: this.calculatePercentage(data.G00000.ÖVP, data.G00000.abgegeben),
                         c: this.getColor(OEVP)
                     },
                     {
-                        a: SPOE,
-                        b: this.calculatePercentage(data.G00000.SPÖ, data.G00000.abgegeben),
+                        party: SPOE,
+                        votes: this.calculatePercentage(data.G00000.SPÖ, data.G00000.abgegeben),
                         c: this.getColor(SPOE)
                     },
                     {
-                        a: FPOE,
-                        b: this.calculatePercentage(data.G00000.FPÖ, data.G00000.abgegeben),
+                        party: FPOE,
+                        votes: this.calculatePercentage(data.G00000.FPÖ, data.G00000.abgegeben),
                         c: this.getColor(FPOE)
                     },
                     {
-                        a: GRUENE,
-                        b: this.calculatePercentage(data.G00000.GRÜNE, data.G00000.abgegeben),
+                        party: GRUENE,
+                        votes: this.calculatePercentage(data.G00000.GRÜNE, data.G00000.abgegeben),
                         c: this.getColor(GRUENE)
                     },
                     {
-                        a: NEOS,
-                        b: this.calculatePercentage(data.G00000.NEOS, data.G00000.abgegeben),
+                        party: NEOS,
+                        votes: this.calculatePercentage(data.G00000.NEOS, data.G00000.abgegeben),
                         c: this.getColor(NEOS)
                     },
                     {
-                        a: SONSTIGE,
-                        b: this.calculatePercentage(parseInt(data.G00000.KPÖ) + parseInt(data.G00000.EUROPA), data.G00000.abgegeben),
+                        party: SONSTIGE,
+                        votes: this.calculatePercentage(parseInt(data.G00000.KPÖ) + parseInt(data.G00000.EUROPA), data.G00000.abgegeben),
                         c: this.getColor(SONSTIGE)
                     }
                 ]
@@ -211,49 +236,59 @@ export class ConcreteDataProvider {
             }
         };
 
-        this
-            .mode_6 = {
+        this.mode_6 = {
             mark: "bar",
             spec: {
                 mark: "bar",
                 encoding: {
-                    x: {field: "a", type: "ordinal", sort: {encoding: "y"}, title: "Partei", scale: {rangeStep: null}},
-                    y: {field: "b", type: "quantitative", title: "Prozent erhaltener Stimmen"},
-                    color: {field: "c", type: "nominal", scale: false}
+                    x: {
+                        field: "party",
+                        type: "ordinal",
+                        sort: {encoding: "y"},
+                        title: "Political party (Austria)",
+                        scale: {rangeStep: null}
+                    },
+                    y: {field: "votes", type: "quantitative", title: "Percent of received polling votes"},
+                    color: {
+                        field: "party", type: "nominal", title: "Political party", scale: {
+                            range: [
+                                this.getColor(FPOE),
+                                this.getColor(GRUENE),
+                                this.getColor(NEOS),
+                                this.getColor(SPOE),
+                                this.getColor(SONSTIGE),
+                                this.getColor(OEVP)
+                            ]
+                        }
+                    }
                 },
             },
             data: {
                 url: data,
                 values: [
                     {
-                        a: OEVP,
-                        b: this.calculatePercentage(data.G00000.ÖVP, data.G00000.abgegeben),
-                        c: this.getColor(OEVP)
+                        party: OEVP,
+                        votes: this.calculatePercentage(data.G00000.ÖVP, data.G00000.abgegeben),
                     },
                     {
-                        a: SPOE,
-                        b: this.calculatePercentage(data.G00000.SPÖ, data.G00000.abgegeben),
-                        c: this.getColor(SPOE)
+                        party: SPOE,
+                        votes: this.calculatePercentage(data.G00000.SPÖ, data.G00000.abgegeben),
                     },
                     {
-                        a: FPOE,
-                        b: this.calculatePercentage(data.G00000.FPÖ, data.G00000.abgegeben),
-                        c: this.getColor(FPOE)
+                        party: FPOE,
+                        votes: this.calculatePercentage(data.G00000.FPÖ, data.G00000.abgegeben),
                     },
                     {
-                        a: GRUENE,
-                        b: this.calculatePercentage(data.G00000.GRÜNE, data.G00000.abgegeben),
-                        c: this.getColor(GRUENE)
+                        party: GRUENE,
+                        votes: this.calculatePercentage(data.G00000.GRÜNE, data.G00000.abgegeben),
                     },
                     {
-                        a: NEOS,
-                        b: this.calculatePercentage(data.G00000.NEOS, data.G00000.abgegeben),
-                        c: this.getColor(NEOS)
+                        party: NEOS,
+                        votes: this.calculatePercentage(data.G00000.NEOS, data.G00000.abgegeben),
                     },
                     {
-                        a: SONSTIGE,
-                        b: this.calculatePercentage(parseInt(data.G00000.KPÖ) + parseInt(data.G00000.EUROPA), data.G00000.abgegeben),
-                        c: this.getColor(SONSTIGE)
+                        party: SONSTIGE,
+                        votes: this.calculatePercentage(parseInt(data.G00000.KPÖ) + parseInt(data.G00000.EUROPA), data.G00000.abgegeben),
                     }
                 ]
             },
