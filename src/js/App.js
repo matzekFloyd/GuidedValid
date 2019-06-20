@@ -60,12 +60,14 @@ class App extends Component {
         return <div>
             {this.state.loading ? <LoadingIndicator css={"centered"}/> :
                 this.state.init ?
-                    <div className="App centered">
-                        <h4 style={{margin: 25 + "px"}}>Understanding Barcharts</h4>
-                        <BarChart mode={this.state.mode} view={ABSTRACT}/>
-                        <button className={"btn btn-info"} style={{marginLeft: 300 + "px", marginTop: 20 + "px"}}
-                                onClick={() => this.start()}> Continue
-                        </button>
+                    <div className="App row">
+                        <div className={"triple-column"} style={{marginTop: 10 + "%"}}>
+                            <h3>Understanding Barcharts</h3>
+                            <BarChart mode={this.state.mode} view={ABSTRACT}/>
+                            <button className={"btn btn-info"} style={{marginTop: 2.5 + "%"}}
+                                    onClick={() => this.start()}> Continue
+                            </button>
+                        </div>
                     </div> :
                     <div className="App row" onKeyPress={(e) => this.handleKeyBoardInput(e)}>
                         <div style={{padding: 30 + "px"}}>
@@ -125,18 +127,18 @@ class App extends Component {
                         </div>
                         <div className="row 2">
                             <div className="triple-column">
-                                    <div className={"controlPanel"}>{this.state.mode >= 5 ? <Empty/> :
-                                        <button className={"btn btn-secondary"}
-                                                onClick={() => this.changeVis(-1)}> Skip</button>}
-                                        <button className={"btn btn-info"}
-                                                onClick={() => this.changeVis(this.state.mode - 1)}
-                                                disabled={this.state.mode === 1}> Previous
-                                        </button>
-                                        <button className={"btn btn-info"}
-                                                onClick={() => this.changeVis(this.state.mode + 1)}
-                                                disabled={this.state.mode >= 5}> Next
-                                        </button>
-                                    </div>
+                                <div className={"controlPanel"}>{this.state.mode >= 5 ? <Empty/> :
+                                    <button className={"btn btn-secondary"}
+                                            onClick={() => this.changeVis(-1)}> Skip</button>}
+                                    <button className={"btn btn-info"}
+                                            onClick={() => this.changeVis(this.state.mode - 1)}
+                                            disabled={this.state.mode === 1}> Previous
+                                    </button>
+                                    <button className={"btn btn-info"}
+                                            onClick={() => this.changeVis(this.state.mode + 1)}
+                                            disabled={this.state.mode >= 5}> Next
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -13,22 +13,21 @@
 .column {
     display: flex;
     flex-direction: column;
-    flex-basis: 100%;
     flex: 1;
 }
 
 .double-column {
     display: flex;
     flex-direction: column;
-    flex-basis: 100%;
     flex: 2;
 }
 
 .triple-column {
     display: flex;
     flex-direction: column;
-    flex-basis: 100%;
     flex: 3;
+    align-items: center;
+    justify-content: center;
 }
 
 .left {
@@ -42,20 +41,19 @@
     margin-right: 7.5%;
 }
 
-.controlPanel{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.controlPanel {
     padding-top: 3.5%;
+    width: 40%;
 }
 
 .controlPanel button {
-    width: 150px;
-    min-width: 50px;
-    margin-left: 15px;
+    width: 30%;
+    min-width: 100px;
+    margin-top: 2%;
+    margin-left: 2%;
 }
 
-.controlPanel button:disabled{
+.controlPanel button:disabled {
     opacity: 0.25;
 }
 
