@@ -1,3 +1,11 @@
+const TEXTS = {
+    ONE: "A bar chart is a chart for comparing different categories using rectangular bars. Bars can be horizontally or vertically oriented, nevertheless we need some dimensions first. These are defined by the x and y axis.",
+    TWO: "One axis of the chart shows the categories, time points, etc. and the other axis shows the values in the specific category or time point which is represented as the height (vertical chart) or width (horizontal chart) of the bars.",
+    THREE: "The bars are distributed along the x axis to their respective attributes or groups. However at the moment the information about height and color is still missing.",
+    FOUR: "The height of the bars along the y axis shows the value for the respective category. The value can be numerical, amount or even percentage.",
+    FIVE: "The color is another visual attribute for distinguishing between different categories or subcategories. Each color can also represent one group or entity in the chart. The legend, if present, explains the color encoding."
+};
+
 export class AbstractDataProvider {
 
     getData(id) {
@@ -20,19 +28,21 @@ export class AbstractDataProvider {
     }
 
     constructor() {
-
         this.mode_1 = {
             mark: "bar",
             spec: {
                 mark: "bar",
-                encoding: {x: {field: "a", type: "ordinal", scale: {rangeStep: null}}, y: {field: "b", type: "quantitative"}},
+                encoding: {
+                    x: {field: "a", type: "ordinal", scale: {rangeStep: null}},
+                    y: {field: "b", type: "quantitative"}
+                },
             },
             data: {
                 values: []
             },
             mode: 1,
             text: {
-                one: "<mark> As known as Bar Graph or Column Graph. The classic Bar Chart uses either horizontal or vertical bars (column chart) to show discrete, numerical comparisons across categories. </mark>"
+                one: `<mark>${TEXTS.ONE}</mark>`
             }
         };
 
@@ -53,8 +63,8 @@ export class AbstractDataProvider {
             },
             mode: 2,
             text: {
-                one: "As known as Bar Graph or Column Graph. The classic Bar Chart uses either horizontal or vertical bars (column chart) to show discrete, numerical comparisons across categories. </span>",
-                two: "<mark> One axis of the chart shows the specific categories being compared and the other axis represents a discrete value scale. </mark>"
+                one: `${TEXTS.ONE}`,
+                two: `<mark>${TEXTS.TWO}</mark>`
             }
         };
 
@@ -75,9 +85,9 @@ export class AbstractDataProvider {
             },
             mode: 3,
             text: {
-                one: "As known as Bar Graph or Column Graph. The classic Bar Chart uses either horizontal or vertical bars (column chart) to show discrete, numerical comparisons across categories.",
-                two: "One axis of the chart shows the specific categories being compared and the other axis represents a discrete value scale.",
-                three: "<mark> Bar Charts are distinguished from Histograms, as they do not display continuous developments over an interval. </mark>"
+                one: `${TEXTS.ONE}`,
+                two: `${TEXTS.TWO}`,
+                three: `<mark>${TEXTS.THREE}</mark>`
             }
         };
 
@@ -98,10 +108,10 @@ export class AbstractDataProvider {
             },
             mode: 4,
             text: {
-                one: "As known as Bar Graph or Column Graph. The classic Bar Chart uses either horizontal or vertical bars (column chart) to show discrete, numerical comparisons across categories.",
-                two: "One axis of the chart shows the specific categories being compared and the other axis represents a discrete value scale.",
-                three: "Bar Charts are distinguished from Histograms, as they do not display continuous developments over an interval.",
-                four: "<mark> Bar Chart's discrete data is categorical data and therefore answers the question of \"how many?\" in each category. </mark> </p>"
+                one: `${TEXTS.ONE}`,
+                two: `${TEXTS.TWO}`,
+                three: `${TEXTS.THREE}`,
+                four: `<mark>${TEXTS.FOUR}</mark>`
             }
         };
 
@@ -131,11 +141,11 @@ export class AbstractDataProvider {
             },
             mode: 5,
             text: {
-                one: "As known as Bar Graph or Column Graph. The classic Bar Chart uses either horizontal or vertical bars (column chart) to show discrete, numerical comparisons across categories.",
-                two: "One axis of the chart shows the specific categories being compared and the other axis represents a discrete value scale.",
-                three: "Bar Charts are distinguished from Histograms, as they do not display continuous developments over an interval.",
-                four: "Bar Chart's discrete data is categorical data and therefore answers the question of \"how many?\" in each category.",
-                five: "<mark> One major flaw with Bar Charts is that labelling becomes problematic when there are a large number of bars. </mark>"
+                one: `${TEXTS.ONE}`,
+                two: `${TEXTS.TWO}`,
+                three: `${TEXTS.THREE}`,
+                four: `${TEXTS.FOUR}`,
+                five: `<mark>${TEXTS.FIVE}</mark>`
             }
         };
 
@@ -165,11 +175,11 @@ export class AbstractDataProvider {
             },
             mode: 6,
             text: {
-                one: "As known as Bar Graph or Column Graph. The classic Bar Chart uses either horizontal or vertical bars (column chart) to show discrete, numerical comparisons across categories.",
-                two: "One axis of the chart shows the specific categories being compared and the other axis represents a discrete value scale.",
-                three: "Bar Charts are distinguished from Histograms, as they do not display continuous developments over an interval.",
-                four: "Bar Chart's discrete data is categorical data and therefore answers the question of \"how many?\" in each category.",
-                five: "One major flaw with Bar Charts is that labelling becomes problematic when there are a large number of bars."
+                one: `${TEXTS.ONE}`,
+                two: `${TEXTS.TWO}`,
+                three: `${TEXTS.THREE}`,
+                four: `${TEXTS.FOUR}`,
+                five: `${TEXTS.FIVE}`
             }
         };
     }

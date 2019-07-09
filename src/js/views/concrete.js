@@ -8,6 +8,14 @@ const GRUENE = "GRÜNE";
 const NEOS = "NEOS";
 const SONSTIGE = "Sonstige";
 
+const TEXTS = {
+    ONE: "A bar chart is a chart for comparing different categories using rectangular bars. Bars can be horizontally or vertically oriented, nevertheless we need some dimensions first. These are defined by the x and y axis.",
+    TWO: "One axis of the chart shows the ‚political parties‘ (x-axis)‚ and the other axis shows the <b>‚number of votes received‘ (y-axis)</b>, which is represented as the height (vertical chart) of the bars.",
+    THREE: "The bars are distributed along the x axis to their respective <b>political party.</b> However at the moment the information about the color is still missing. The height of the bars along the y-axis shows the <b>number of votes received per political party.</b>",
+    FOUR: "The color is another visual attribute for distinguishing between different <b>political parties in Austria.</b> The legend explains the color encoding.",
+    FIVE: "The <b>political parties</b> can also be ordered either descending or ascending. In this example the bars are in ascending order."
+};
+
 export class ConcreteDataProvider {
 
     getData(id) {
@@ -58,7 +66,7 @@ export class ConcreteDataProvider {
             },
             mode: 1,
             text: {
-                one: "<mark> As known as Bar Graph or Column Graph. The classic Bar Chart uses either horizontal or vertical bars (column chart) to show discrete, numerical comparisons across categories. </mark>"
+                one: `<mark>${TEXTS.ONE}</mark>`
             }
         };
 
@@ -84,8 +92,8 @@ export class ConcreteDataProvider {
             },
             mode: 2,
             text: {
-                one: "As known as Bar Graph or Column Graph. The classic Bar Chart uses either horizontal or vertical bars (column chart) to show discrete, numerical comparisons across categories. </span>",
-                two: "<mark> One axis of the chart shows the specific categories being compared and the other axis represents a discrete value scale. </mark>"
+                one: `${TEXTS.ONE}`,
+                two: `<mark>${TEXTS.TWO}</mark>`
             }
         };
 
@@ -114,9 +122,9 @@ export class ConcreteDataProvider {
             },
             mode: 3,
             text: {
-                one: "As known as Bar Graph or Column Graph. The classic Bar Chart uses either horizontal or vertical bars (column chart) to show discrete, numerical comparisons across categories.",
-                two: "One axis of the chart shows the specific categories being compared and the other axis represents a discrete value scale.",
-                three: "<mark> Bar Charts are distinguished from Histograms, as they do not display continuous developments over an interval. </mark>"
+                one: `${TEXTS.ONE}`,
+                two: `${TEXTS.TWO}`,
+                three: `<mark>${TEXTS.THREE}</mark>`
             }
         };
 
@@ -157,10 +165,10 @@ export class ConcreteDataProvider {
             },
             mode: 4,
             text: {
-                one: "As known as Bar Graph or Column Graph. The classic Bar Chart uses either horizontal or vertical bars (column chart) to show discrete, numerical comparisons across categories.",
-                two: "One axis of the chart shows the specific categories being compared and the other axis represents a discrete value scale.",
-                three: "Bar Charts are distinguished from Histograms, as they do not display continuous developments over an interval.",
-                four: "<mark> Bar Chart's discrete data is categorical data and therefore answers the question of \"how many?\" in each category. </mark> </p>"
+                one: `${TEXTS.ONE}`,
+                two: `${TEXTS.TWO}`,
+                three: `${TEXTS.THREE}`,
+                four: `<mark>${TEXTS.FOUR}</mark>`
             }
         };
 
@@ -228,11 +236,11 @@ export class ConcreteDataProvider {
             },
             mode: 5,
             text: {
-                one: "As known as Bar Graph or Column Graph. The classic Bar Chart uses either horizontal or vertical bars (column chart) to show discrete, numerical comparisons across categories.",
-                two: "One axis of the chart shows the specific categories being compared and the other axis represents a discrete value scale.",
-                three: "Bar Charts are distinguished from Histograms, as they do not display continuous developments over an interval.",
-                four: "Bar Chart's discrete data is categorical data and therefore answers the question of \"how many?\" in each category.",
-                five: "<mark> One major flaw with Bar Charts is that labelling becomes problematic when there are a large number of bars. </mark>"
+                one: `${TEXTS.ONE}`,
+                two: `${TEXTS.TWO}`,
+                three: `${TEXTS.THREE}`,
+                four: `${TEXTS.FOUR}`,
+                five: `<mark>${TEXTS.FIVE}</mark>`
             }
         };
 
@@ -294,11 +302,11 @@ export class ConcreteDataProvider {
             },
             mode: 6,
             text: {
-                one: "As known as Bar Graph or Column Graph. The classic Bar Chart uses either horizontal or vertical bars (column chart) to show discrete, numerical comparisons across categories.",
-                two: "One axis of the chart shows the specific categories being compared and the other axis represents a discrete value scale.",
-                three: "Bar Charts are distinguished from Histograms, as they do not display continuous developments over an interval.",
-                four: "Bar Chart's discrete data is categorical data and therefore answers the question of \"how many?\" in each category.",
-                five: "One major flaw with Bar Charts is that labelling becomes problematic when there are a large number of bars."
+                one: `${TEXTS.ONE}`,
+                two: `${TEXTS.TWO}`,
+                three: `${TEXTS.THREE}`,
+                four: `${TEXTS.FOUR}`,
+                five: `${TEXTS.FIVE}`
             }
         };
     }
