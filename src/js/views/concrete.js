@@ -10,7 +10,7 @@ const SONSTIGE = "Sonstige";
 
 const TEXTS = {
     ONE: "A bar chart is a chart for comparing different categories using rectangular bars. Bars can be horizontally or vertically oriented, nevertheless we need some dimensions first. These are defined by the x and y axis.",
-    TWO: "One axis of the chart shows the ‚political parties‘ (x-axis)‚ and the other axis shows the <b>‚number of votes received‘ (y-axis)</b>, which is represented as the height (vertical chart) of the bars.",
+    TWO: "One axis of the chart shows the <b>‚political parties‘ (x-axis)</b>‚ and the other axis shows the <b>‚number of votes received‘ (y-axis)</b>, which is represented as the height (vertical chart) of the bars.",
     THREE: "The bars are distributed along the x axis to their respective <b>political party.</b> However at the moment the information about the color is still missing. The height of the bars along the y-axis shows the <b>number of votes received per political party.</b>",
     FOUR: "The color is another visual attribute for distinguishing between different <b>political parties in Austria.</b> The legend explains the color encoding.",
     FIVE: "The <b>political parties</b> can also be ordered either descending or ascending. In this example the bars are in ascending order."

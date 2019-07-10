@@ -1,8 +1,10 @@
 .txtMode {
-    padding-top: 10px;
+    display: flex;
+    padding-bottom: 5.5%;
 }
 
 .txtModeBtn {
     float: left;
-    margin: 10px;
+    margin-right: 15px;
+    margin-top: 5px;
 }
